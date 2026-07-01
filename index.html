@@ -95,6 +95,25 @@
       letter-spacing: .04em;
       box-shadow: 0 18px 42px rgba(246, 180, 54, .18);
     }
+    .sub-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .sub-actions a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      text-decoration: none;
+      color: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
     .motion {
       display: grid;
       gap: 10px;
@@ -154,7 +173,11 @@
           <source src="word-world-preview-motion.mp4" type="video/mp4">
         </video>
       </div>
-      <a class="download" href="https://github.com/navi-RAY/word-world-preview-download/releases/latest/download/word-world-preview.apk">APK DOWNLOAD</a>
+      <a class="download" href="word-world-preview.apk" download>APK DOWNLOAD</a>
+      <div class="sub-actions">
+        <a href="https://github.com/navi-RAY/word-world-preview-download/releases/latest/download/word-world-preview.apk">RELEASE APK</a>
+        <a href="word-world-preview-motion.mp4" download>VIDEO MP4</a>
+      </div>
       <div class="notice">
         <strong>Android Chromeで開いてください。</strong><br>
         警告が出た場合は、Chromeからの不明なアプリのインストールを許可してインストールします。
