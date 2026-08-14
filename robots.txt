@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://navi-ray.github.io/word-world-preview-download/sitemap.xml
