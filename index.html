@@ -2,197 +2,546 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Word-World Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Word-World | 英単語で戦う育成クイズRPG</title>
+  <meta name="description" content="受験英語、英会話、旅行、ビジネス、スラングを5問バトルで攻略。10人のキャラクターを育て、物語を解放するiPhone向け英単語クイズRPG。">
+  <meta name="theme-color" content="#f6c453">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="apple-itunes-app" content="app-id=6798476120, app-argument=https://apps.apple.com/app/id6798476120">
+  <link rel="canonical" href="https://navi-ray.github.io/word-world-preview-download/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="Word-World | 英単語で戦う育成クイズRPG">
+  <meta property="og:description" content="答える。壊す。育てる。英単語を5問バトルで攻略するiPhone向け育成RPG。">
+  <meta property="og:url" content="https://navi-ray.github.io/word-world-preview-download/">
+  <meta property="og:image" content="https://navi-ray.github.io/word-world-preview-download/assets/og-word-world.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #07080d;
-      --panel: rgba(11, 14, 20, .74);
-      --gold: #f6b436;
-      --aqua: #1fc4d2;
-      --coral: #ff5c4b;
-      --white: #f8f8f4;
+      color-scheme: light;
+      --ink: #101926;
+      --navy: #082b45;
+      --paper: #f7f9f8;
+      --white: #ffffff;
+      --sun: #f6c453;
+      --coral: #f15b4e;
+      --cyan: #14aebb;
+      --green: #16845c;
+      --line: rgba(16, 25, 38, .16);
+      --shadow: 0 18px 48px rgba(8, 43, 69, .14);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        linear-gradient(120deg, rgba(255, 92, 75, .18), transparent 34%),
-        radial-gradient(circle at 78% 42%, rgba(31, 196, 210, .24), transparent 30%),
-        linear-gradient(180deg, #10131d 0%, var(--bg) 78%);
-      color: var(--white);
-      overflow-x: hidden;
+      min-width: 320px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      letter-spacing: 0;
     }
-    main {
-      width: min(760px, 100%);
+    a { color: inherit; }
+    img { max-width: 100%; }
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 36px 20px 44px;
+      padding: 18px 0;
+      color: var(--white);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border: 2px solid rgba(255,255,255,.72);
+      border-radius: 8px;
+    }
+    .header-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid rgba(255,255,255,.58);
+      border-radius: 6px;
+      background: rgba(8, 43, 69, .76);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      backdrop-filter: blur(12px);
     }
     .hero {
-      min-height: 82vh;
+      position: relative;
+      min-height: 86svh;
       display: grid;
-      align-content: center;
-      gap: 22px;
+      align-items: end;
+      overflow: hidden;
+      background: var(--navy) url("assets/01-home.jpg") 72% 18% / cover no-repeat;
+      color: var(--white);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 22, 34, .96) 0%, rgba(5, 22, 34, .82) 35%, rgba(5, 22, 34, .2) 66%, rgba(5, 22, 34, .06) 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 28%;
+      background: linear-gradient(0deg, rgba(5, 22, 34, .84), transparent);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 128px 0 72px;
     }
     .eyebrow {
-      color: var(--gold);
-      font-weight: 900;
-      letter-spacing: .18em;
+      margin: 0 0 12px;
+      color: var(--sun);
       font-size: 14px;
+      font-weight: 900;
     }
     h1 {
       margin: 0;
-      font-size: clamp(46px, 12vw, 84px);
-      line-height: .9;
-      letter-spacing: .02em;
+      max-width: 720px;
+      font-size: 76px;
+      line-height: 1;
+      font-weight: 950;
     }
-    .lead {
-      margin: 0;
-      max-width: 560px;
-      color: rgba(255,255,255,.72);
+    .hero-copy {
+      margin: 18px 0 0;
+      max-width: 590px;
+      font-size: 22px;
+      line-height: 1.65;
       font-weight: 800;
-      line-height: 1.7;
-      font-size: 16px;
     }
-    .stats {
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 22px 0 0;
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .hero-meta span { white-space: nowrap; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .store-button,
+    .secondary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 0 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+    }
+    .store-button {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+    .secondary-button {
+      border: 1px solid rgba(255,255,255,.46);
+      background: rgba(5,22,34,.5);
+      color: var(--white);
+      backdrop-filter: blur(12px);
+    }
+    .release-note {
+      display: inline-block;
+      margin-top: 14px;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .ticker {
+      position: relative;
+      z-index: 3;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      background: var(--sun);
+      color: var(--ink);
+      border-top: 1px solid rgba(255,255,255,.5);
     }
-    .stat, .notice {
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,.11);
-      border-radius: 6px;
-      padding: 14px;
+    .ticker div {
+      min-height: 76px;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      border-right: 1px solid rgba(16,25,38,.18);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
     }
-    .stat b {
+    .ticker div:last-child { border-right: 0; }
+    .ticker strong {
       display: block;
-      color: var(--aqua);
-      font-size: 20px;
+      font-size: 23px;
       line-height: 1.1;
     }
-    .stat span {
-      color: rgba(255,255,255,.54);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .14em;
+    .section {
+      padding: 82px 0;
     }
-    .download {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 64px;
-      width: 100%;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(100deg, var(--coral), var(--gold));
-      border-radius: 6px;
-      font-size: 24px;
-      font-weight: 1000;
-      letter-spacing: .04em;
-      box-shadow: 0 18px 42px rgba(246, 180, 54, .18);
+    .section-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
     }
-    .sub-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .sub-actions a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      text-decoration: none;
-      color: rgba(255,255,255,.78);
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 6px;
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--coral);
       font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .04em;
+      font-weight: 950;
     }
-    .motion {
+    h2 {
+      margin: 0;
+      max-width: 800px;
+      font-size: 42px;
+      line-height: 1.25;
+      font-weight: 950;
+    }
+    .section-lead {
+      max-width: 660px;
+      margin: 16px 0 0;
+      color: #425466;
+      font-size: 17px;
+      line-height: 1.85;
+      font-weight: 650;
+    }
+    .screen-rail {
       display: grid;
-      gap: 10px;
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 10px;
-      border-radius: 6px;
+      grid-auto-flow: column;
+      grid-auto-columns: min(340px, 78vw);
+      gap: 16px;
+      margin-top: 34px;
+      padding: 6px max(20px, calc((100vw - 1120px) / 2)) 28px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: inline mandatory;
+      scrollbar-color: var(--cyan) rgba(8,43,69,.08);
     }
-    video {
-      width: 100%;
-      aspect-ratio: 9 / 20;
-      object-fit: contain;
-      background: #050509;
+    .screen-rail figure {
+      scroll-snap-align: start;
+      margin: 0;
+    }
+    .screen-rail img {
       display: block;
+      width: 100%;
+      aspect-ratio: 1320 / 2868;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
     }
-    .notice {
-      color: rgba(255,255,255,.7);
+    .screen-rail figcaption {
+      padding: 12px 2px 0;
+      color: #526273;
       font-size: 13px;
-      font-weight: 760;
-      line-height: 1.65;
+      font-weight: 850;
     }
-    .notice strong { color: white; }
-    .steps {
+    .game-loop {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .game-loop .section-kicker { color: var(--sun); }
+    .loop-grid {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 40px;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .loop-item {
+      min-height: 230px;
+      padding: 30px;
+      background: var(--navy);
+    }
+    .loop-number {
+      color: var(--sun);
+      font-size: 36px;
+      font-weight: 950;
+    }
+    .loop-item h3 {
+      margin: 36px 0 10px;
+      font-size: 24px;
+      font-weight: 950;
+    }
+    .loop-item p {
+      margin: 0;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+    .worlds {
+      background: var(--white);
+    }
+    .world-line {
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 28px;
     }
-    .step {
-      border-left: 4px solid var(--aqua);
-      padding: 10px 12px;
-      background: rgba(255,255,255,.055);
-      font-size: 13px;
-      font-weight: 800;
-      color: rgba(255,255,255,.72);
+    .world-line span {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--paper);
+      font-size: 14px;
+      font-weight: 850;
     }
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      background: var(--coral);
+      color: var(--white);
+    }
+    .final-cta::after {
+      content: "WORD?";
+      position: absolute;
+      right: -16px;
+      bottom: -38px;
+      color: rgba(255,255,255,.13);
+      font-size: 180px;
+      font-weight: 950;
+      pointer-events: none;
+    }
+    .final-cta .section-inner { position: relative; z-index: 1; }
+    .final-cta h2 { max-width: 620px; }
+    .final-cta .store-button { margin-top: 26px; }
     footer {
-      color: rgba(255,255,255,.38);
+      padding: 34px 20px calc(34px + env(safe-area-inset-bottom));
+      background: #071b2a;
+      color: rgba(255,255,255,.7);
+      text-align: center;
       font-size: 12px;
+      line-height: 1.8;
       font-weight: 700;
-      line-height: 1.6;
+    }
+    footer nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-bottom: 12px;
+    }
+    footer a { color: var(--white); }
+    .mobile-download { display: none; }
+    @media (max-width: 760px) {
+      .site-header { width: calc(100% - 28px); }
+      .brand span { display: none; }
+      .hero {
+        min-height: 84svh;
+        background-position: 57% 12%;
+      }
+      .hero::before {
+        background: linear-gradient(0deg, rgba(5,22,34,.98) 0%, rgba(5,22,34,.88) 37%, rgba(5,22,34,.25) 72%, rgba(5,22,34,.08) 100%);
+      }
+      .hero-content {
+        width: calc(100% - 32px);
+        padding: 110px 0 38px;
+      }
+      h1 { font-size: 50px; }
+      .hero-copy { max-width: 460px; font-size: 18px; }
+      .hero-meta { gap: 8px 14px; }
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .store-button,
+      .secondary-button { width: 100%; }
+      .ticker { grid-template-columns: 1fr; }
+      .ticker div {
+        min-height: 58px;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        gap: 8px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(16,25,38,.18);
+      }
+      .ticker div:last-child { border-bottom: 0; }
+      .ticker strong { font-size: 19px; }
+      .section { padding: 64px 0; }
+      .section-inner { width: calc(100% - 32px); }
+      h2 { font-size: 34px; }
+      .loop-grid { grid-template-columns: 1fr; }
+      .loop-item { min-height: 178px; }
+      .loop-item h3 { margin-top: 18px; }
+      .final-cta::after { font-size: 92px; bottom: -18px; }
+      .mobile-download {
+        position: fixed;
+        z-index: 10;
+        left: 12px;
+        right: 12px;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 54px;
+        border-radius: 6px;
+        background: var(--ink);
+        color: var(--white);
+        box-shadow: 0 12px 36px rgba(8,43,69,.32);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 900;
+      }
+      footer { padding-bottom: calc(98px + env(safe-area-inset-bottom)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Word-World",
+    "operatingSystem": "iOS 18.0 or later",
+    "applicationCategory": "GameApplication",
+    "description": "英単語を5問バトルで攻略し、キャラクターを育てて物語を解放する育成クイズRPG。",
+    "image": "https://navi-ray.github.io/word-world-preview-download/assets/AppIcon-1024.png",
+    "url": "https://apps.apple.com/app/id6798476120",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
 </head>
 <body>
-  <main>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Word-World トップへ">
+      <img src="assets/AppIcon-1024.png" alt="">
+      <span>WORD-WORLD</span>
+    </a>
+    <a class="header-link" href="https://apps.apple.com/app/id6798476120">App Storeへ</a>
+  </header>
+
+  <main id="top">
     <section class="hero">
-      <div class="eyebrow">ANDROID UNFINISHED PREVIEW APK</div>
-      <h1>Word-World<br>Preview</h1>
-      <p class="lead">英単語クイズRPG「Word-World」の未完成確認版です。v0.48では専用サウンドシステムを実装しました。ホームの時間帯別BGMを含むオリジナルBGM10曲、正解・不正解・コンボ・スキル・報酬などの効果音19種を収録。画面ごとの曲切替、英単語の自動発音と聞き直し、BGM・効果音・発音の個別音量設定に対応しています。アプリを閉じた時は再生を停止し、復帰時は現在の画面に合う曲へ戻ります。完成版ではありません。</p>
-      <div class="stats">
-        <div class="stat"><b>0.48</b><span>ORIGINAL AUDIO SYSTEM</span></div>
-        <div class="stat"><b>37MB</b><span>APK</span></div>
-        <div class="stat"><b>¥800</b><span>PASS</span></div>
+      <div class="hero-content">
+        <p class="eyebrow">英単語で戦う育成クイズRPG</p>
+        <h1>Word-World</h1>
+        <p class="hero-copy">答える。壊す。育てる。<br>英単語を、毎日遊べるバトルに。</p>
+        <div class="hero-meta" aria-label="ゲーム概要">
+          <span>iPhone / iPad</span>
+          <span>基本プレイ無料</span>
+          <span>日本語対応</span>
+        </div>
+        <div class="actions">
+          <a class="store-button" href="https://apps.apple.com/app/id6798476120">App Storeで無料ダウンロード&nbsp; →</a>
+          <a class="secondary-button" href="#screens">ゲーム画面を見る&nbsp; ↓</a>
+        </div>
+        <span class="release-note">iOS 18以降対応</span>
       </div>
-      <div class="motion">
-        <video controls playsinline muted loop poster="word-world-preview-poster.jpg">
-          <source src="word-world-preview-motion.mp4" type="video/mp4">
-        </video>
+      <div class="ticker" aria-label="収録コンテンツ">
+        <div><strong>5 WORLD</strong>受験・日常・旅行・ビジネス・スラング</div>
+        <div><strong>10 CAST</strong>育成・親密度・個別ストーリー</div>
+        <div><strong>5 WORD BATTLE</strong>短く遊べるクイズバトル</div>
       </div>
-      <a class="download" href="https://github.com/navi-RAY/word-world-preview-download/releases/latest/download/word-world-preview.apk">APK DOWNLOAD</a>
-      <div class="sub-actions">
-        <a href="https://github.com/navi-RAY/word-world-preview-download/releases/latest/download/word-world-preview.apk">RELEASE APK</a>
-        <a href="word-world-preview-motion.mp4" download>VIDEO MP4</a>
+    </section>
+
+    <section class="section" id="screens">
+      <div class="section-inner">
+        <p class="section-kicker">ACTUAL GAMEPLAY</p>
+        <h2>教材ではなく、最初からゲームとして始まる。</h2>
+        <p class="section-lead">放課後の学園を舞台に、英単語の正解が攻撃とコンボに変わる。育成したキャラクターと次のゲートへ進もう。</p>
       </div>
-      <div class="notice">
-        <strong>Android Chromeで開いてください。</strong><br>
-        警告が出た場合は、Chromeからの不明なアプリのインストールを許可してインストールします。
-        <div class="steps">
-          <div class="step">1. APK DOWNLOADを押す</div>
-          <div class="step">2. ダウンロード完了後、ファイルを開く</div>
-          <div class="step">3. Chromeのインストール許可をON</div>
-          <div class="step">4. Word-World Previewを起動</div>
+      <div class="screen-rail" aria-label="Word-World ゲーム画面">
+        <figure><img src="assets/01-home.jpg" alt="キャラクターが大きく表示されたWord-Worldのホーム画面" loading="lazy"><figcaption>HOME / 今日のゲートへ</figcaption></figure>
+        <figure><img src="assets/02-battle.jpg" alt="英単語の意味を選んで攻撃するクイズバトル画面" loading="lazy"><figcaption>BATTLE / 答えてターゲットを壊す</figcaption></figure>
+        <figure><img src="assets/03-character.jpg" alt="キャラクターのレベルと親密度を育てる画面" loading="lazy"><figcaption>CAST / 育成と個別ストーリー</figcaption></figure>
+        <figure><img src="assets/04-world.jpg" alt="英語カテゴリを選ぶワールド画面" loading="lazy"><figcaption>WORLD / 5つの英語カテゴリ</figcaption></figure>
+        <figure><img src="assets/05-result.jpg" alt="クイズバトルの経験値と報酬を確認するリザルト画面" loading="lazy"><figcaption>RESULT / XPと報酬を獲得</figcaption></figure>
+        <figure><img src="assets/06-premium.jpg" alt="冒険パスと購入復元を確認する画面" loading="lazy"><figcaption>PASS / 買い切りで遊びやすく</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section game-loop">
+      <div class="section-inner">
+        <p class="section-kicker">GAME LOOP</p>
+        <h2>覚えるほど、キャラクターとの物語が進む。</h2>
+        <div class="loop-grid">
+          <article class="loop-item">
+            <div class="loop-number">01</div>
+            <h3>ANSWER</h3>
+            <p>5問単位のテンポで、英単語の意味と使い方に挑戦。</p>
+          </article>
+          <article class="loop-item">
+            <div class="loop-number">02</div>
+            <h3>BREAK</h3>
+            <p>正解、連続正解、スキルがバトル演出へつながる。</p>
+          </article>
+          <article class="loop-item">
+            <div class="loop-number">03</div>
+            <h3>GROW</h3>
+            <p>XP、ポイント、親密度を獲得して新しい会話を解放。</p>
+          </article>
         </div>
       </div>
-      <footer>
-        This is a private preview build for motion, visual, and flow testing. It is not a Google Play release.<br>
-        <a href="support.html">サポート</a> / <a href="privacy.html">プライバシーポリシー</a> / <a href="terms.html">利用規約</a>
-      </footer>
+    </section>
+
+    <section class="section worlds">
+      <div class="section-inner">
+        <p class="section-kicker">FIVE WORLDS</p>
+        <h2>試験の先まで使える英語を、一つのゲームで。</h2>
+        <p class="section-lead">受験英語だけに閉じず、日常会話、旅行、仕事、スラングまで。目的に合わせてワールドを選び、苦手語を優先して復習できます。</p>
+        <div class="world-line" aria-label="学習カテゴリ">
+          <span>受験英語</span>
+          <span>日常英会話</span>
+          <span>旅行英語</span>
+          <span>ビジネス英語</span>
+          <span>スラング</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="section-inner">
+        <p class="section-kicker">OPEN THE NEXT GATE</p>
+        <h2>次の英単語を、攻略しに行こう。</h2>
+        <a class="store-button" href="https://apps.apple.com/app/id6798476120">App Storeで無料ダウンロード&nbsp; →</a>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <nav aria-label="フッターナビゲーション">
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+    </nav>
+    <div>© 2026 CIEL CO., LTD. Word-World</div>
+  </footer>
+
+  <a class="mobile-download" href="https://apps.apple.com/app/id6798476120">App Storeで無料ダウンロード&nbsp; →</a>
 </body>
 </html>
