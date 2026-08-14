@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Word-World Social Card</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      position: relative;
+      background: #082b45;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      letter-spacing: 0;
+    }
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      right: 0;
+      height: 18px;
+    }
+    body::before { top: 0; background: #f6c453; }
+    body::after { bottom: 0; background: #f15b4e; }
+    .copy {
+      position: absolute;
+      z-index: 2;
+      inset: 0 auto 0 0;
+      width: 620px;
+      padding: 58px 58px 52px 64px;
+      background: #082b45;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 44px;
+      color: #f6c453;
+      font-size: 21px;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 86px;
+      height: 86px;
+      border: 2px solid rgba(255,255,255,.72);
+      border-radius: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 64px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    h2 {
+      margin: 25px 0 0;
+      font-size: 46px;
+      line-height: 1.36;
+      font-weight: 950;
+    }
+    .rule { width: 82px; height: 6px; margin-top: 28px; background: #14aebb; }
+    p {
+      margin: 22px 0 0;
+      color: #e7eef2;
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+    .meta {
+      position: absolute;
+      left: 64px;
+      bottom: 48px;
+      color: #f6c453;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .gameplay {
+      position: absolute;
+      inset: 0 0 0 620px;
+      width: 580px;
+      height: 630px;
+      object-fit: cover;
+      object-position: center 9%;
+    }
+  </style>
+</head>
+<body>
+  <div class="copy">
+    <div class="brand"><img src="assets/AppIcon-1024.png" alt=""><span>WORD-WORLD</span></div>
+    <h1>Word-World</h1>
+    <h2>英単語で戦う<br>育成クイズRPG</h2>
+    <div class="rule"></div>
+    <p>答える。壊す。育てる。</p>
+    <div class="meta">iPhone&nbsp;&nbsp;|&nbsp;&nbsp;基本プレイ無料</div>
+  </div>
+  <img class="gameplay" src="assets/01-home.jpg" alt="">
+</body>
+</html>
