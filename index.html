@@ -180,10 +180,32 @@
     }
     .release-note {
       display: inline-block;
-      margin-top: 14px;
       color: rgba(255,255,255,.68);
       font-size: 12px;
       font-weight: 750;
+    }
+    .download-foot {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 14px;
+    }
+    .desktop-qr {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.78);
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 800;
+    }
+    .desktop-qr img {
+      width: 76px;
+      height: 76px;
+      padding: 5px;
+      border-radius: 4px;
+      background: var(--white);
     }
     .ticker {
       position: relative;
@@ -381,6 +403,7 @@
       .actions { display: grid; grid-template-columns: 1fr; }
       .store-button,
       .secondary-button { width: 100%; }
+      .desktop-qr { display: none; }
       .ticker { grid-template-columns: 1fr; }
       .ticker div {
         min-height: 58px;
@@ -465,7 +488,13 @@
           <a class="store-button" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">App Storeで無料ダウンロード&nbsp; →</a>
           <a class="secondary-button" href="#screens">ゲーム画面を見る&nbsp; ↓</a>
         </div>
-        <span class="release-note">iOS 18以降対応</span>
+        <div class="download-foot">
+          <span class="release-note">iOS 18以降対応</span>
+          <a class="desktop-qr" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=qr_lp&amp;mt=8">
+            <img src="assets/app-store-qr.png" alt="Word-WorldのApp Storeページを開くQRコード">
+            <span>iPhoneで読み取る<br>App Storeを開く</span>
+          </a>
+        </div>
       </div>
       <div class="ticker" aria-label="収録コンテンツ">
         <div><strong>5 WORLD</strong>受験・日常・旅行・ビジネス・スラング</div>
