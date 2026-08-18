@@ -4,96 +4,89 @@
   <meta charset="utf-8">
   <title>Word-World Social Card</title>
   <style>
+    @font-face {
+      font-family: "WW Display";
+      src: url("assets/fonts/Rajdhani-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "WW Japanese";
+      src: url("assets/fonts/ZenKakuGothicNew-Black.ttf") format("truetype");
+      font-weight: 900;
+    }
     * { box-sizing: border-box; }
     html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
     body {
       position: relative;
-      background: #082b45;
+      background: #071c25;
       color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      font-family: "WW Japanese", -apple-system, BlinkMacSystemFont, sans-serif;
       letter-spacing: 0;
     }
-    body::before,
     body::after {
       content: "";
       position: absolute;
-      z-index: 3;
-      left: 0;
-      right: 0;
-      height: 18px;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7,28,37,.98) 0%, rgba(7,28,37,.86) 42%, rgba(7,28,37,.18) 72%, rgba(7,28,37,.06) 100%);
     }
-    body::before { top: 0; background: #f6c453; }
-    body::after { bottom: 0; background: #f15b4e; }
     .copy {
       position: absolute;
       z-index: 2;
-      inset: 0 auto 0 0;
-      width: 620px;
-      padding: 58px 58px 52px 64px;
-      background: #082b45;
+      inset: 0;
+      width: 730px;
+      padding: 48px 58px 48px 64px;
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 44px;
-      color: #f6c453;
-      font-size: 21px;
+      gap: 13px;
+      margin-bottom: 54px;
+      color: #ffbd47;
+      font: 700 20px/1 "WW Display", sans-serif;
       font-weight: 900;
     }
     .brand img {
-      width: 86px;
-      height: 86px;
+      width: 62px;
+      height: 62px;
       border: 2px solid rgba(255,255,255,.72);
       border-radius: 8px;
     }
     h1 {
       margin: 0;
-      font-size: 64px;
-      line-height: 1;
-      font-weight: 950;
+      font: 700 94px/.82 "WW Display", sans-serif;
     }
     h2 {
-      margin: 25px 0 0;
-      font-size: 46px;
-      line-height: 1.36;
-      font-weight: 950;
-    }
-    .rule { width: 82px; height: 6px; margin-top: 28px; background: #14aebb; }
-    p {
-      margin: 22px 0 0;
-      color: #e7eef2;
-      font-size: 24px;
-      line-height: 1.5;
-      font-weight: 800;
+      margin: 38px 0 0;
+      font-size: 49px;
+      line-height: 1.26;
+      font-weight: 900;
     }
     .meta {
       position: absolute;
       left: 64px;
       bottom: 48px;
-      color: #f6c453;
-      font-size: 18px;
-      font-weight: 900;
+      color: rgba(255,255,255,.76);
+      font-size: 17px;
+      font-weight: 500;
     }
     .gameplay {
       position: absolute;
-      inset: 0 0 0 620px;
-      width: 580px;
+      inset: 0 auto 0 0;
+      width: 1400px;
       height: 630px;
       object-fit: cover;
-      object-position: center 9%;
+      object-position: 72% 14%;
     }
   </style>
 </head>
 <body>
   <div class="copy">
-    <div class="brand"><img src="assets/AppIcon-1024.png" alt=""><span>WORD-WORLD</span></div>
-    <h1>Word-World</h1>
-    <h2>英単語で戦う<br>育成クイズRPG</h2>
-    <div class="rule"></div>
-    <p>答える。壊す。育てる。</p>
-    <div class="meta">iPhone&nbsp;&nbsp;|&nbsp;&nbsp;基本プレイ無料</div>
+    <div class="brand"><img src="assets/AppIcon-1024.png" alt=""><span>ENGLISH QUIZ RPG</span></div>
+    <h1>WORD-WORLD</h1>
+    <h2>放課後、<br>ことばが武器になる。</h2>
+    <div class="meta">答えた5問が、次の物語になる。</div>
   </div>
-  <img class="gameplay" src="assets/01-home.jpg" alt="">
+  <img class="gameplay" src="assets/01-home.png" alt="">
 </body>
 </html>
