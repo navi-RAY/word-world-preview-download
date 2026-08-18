@@ -148,6 +148,30 @@
       font-size: 13px;
       font-weight: 800;
     }
+    .version-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 18px;
+    }
+    .version-status span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .version-status .live {
+      background: #ffffff;
+      color: #082b45;
+    }
+    .version-status .review {
+      border: 1px solid rgba(255,255,255,.72);
+      background: rgba(8,43,69,.82);
+      color: #ffffff;
+    }
     .hero-meta span { white-space: nowrap; }
     .actions {
       display: flex;
@@ -451,7 +475,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Word-World",
-    "operatingSystem": "iOS 18.0 or later",
+    "operatingSystem": "iOS 16.0 or later",
     "applicationCategory": "GameApplication",
     "description": "英単語を5問バトルで攻略し、キャラクターを育てて物語を解放する育成クイズRPG。",
     "image": "https://navi-ray.github.io/word-world-preview-download/assets/AppIcon-1024.png",
@@ -479,6 +503,10 @@
         <p class="eyebrow">英単語で戦う育成クイズRPG</p>
         <h1>Word-World</h1>
         <p class="hero-copy">答える。壊す。育てる。<br>英単語を、毎日遊べるバトルに。</p>
+        <div class="version-status" aria-label="公開バージョン">
+          <span class="live">現在公開中 iOS 1.0</span>
+          <span class="review">iOS 1.0.1 Apple審査中</span>
+        </div>
         <div class="hero-meta" aria-label="ゲーム概要">
           <span>iPhone / iPad</span>
           <span>基本プレイ無料</span>
@@ -489,7 +517,7 @@
           <a class="secondary-button" href="#screens">ゲーム画面を見る&nbsp; ↓</a>
         </div>
         <div class="download-foot">
-          <span class="release-note">iOS 18以降対応</span>
+          <span class="release-note">iOS 16以降対応</span>
           <a class="desktop-qr" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=qr_lp&amp;mt=8">
             <img src="assets/app-store-qr.png" alt="Word-WorldのApp Storeページを開くQRコード">
             <span>iPhoneで読み取る<br>App Storeを開く</span>
