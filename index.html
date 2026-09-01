@@ -269,6 +269,242 @@
       line-height: 1.28;
       font-weight: 900;
     }
+    .cast-showcase {
+      --cast-accent: #ef5d4d;
+      position: relative;
+      overflow: hidden;
+      background: #0b2631;
+      color: var(--white);
+    }
+    .cast-stage {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: minmax(360px, 42%) minmax(0, 58%);
+    }
+    .cast-information {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 92px max(38px, calc((100vw - 1180px) / 2));
+      background: #0b2631;
+    }
+    .cast-information::after {
+      content: "";
+      width: 62px;
+      height: 5px;
+      margin-top: 38px;
+      background: var(--cast-accent);
+      transition: background-color .4s ease;
+    }
+    .cast-index {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: rgba(255,255,255,.62);
+      font: 700 15px/1 "WW Display", sans-serif;
+    }
+    .cast-index strong {
+      color: var(--cast-accent);
+      font-size: 28px;
+      transition: color .4s ease;
+    }
+    .cast-name {
+      margin: 0;
+      font-size: clamp(58px, 7vw, 94px);
+      line-height: .95;
+      font-weight: 900;
+    }
+    .cast-callsign {
+      margin: 15px 0 0;
+      color: var(--cast-accent);
+      font: 700 clamp(21px, 2.2vw, 30px)/1 "WW Display", sans-serif;
+      transition: color .4s ease;
+    }
+    .cast-description {
+      max-width: 390px;
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.78);
+      font-size: 16px;
+      line-height: 1.85;
+      font-weight: 600;
+    }
+    .cast-unlock {
+      align-self: flex-start;
+      margin-top: 25px;
+      padding: 9px 13px 8px;
+      border: 1px solid var(--cast-accent);
+      color: var(--white);
+      font: 700 14px/1 "WW Display", sans-serif;
+      transition: border-color .4s ease;
+    }
+    .cast-controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 30px;
+    }
+    .cast-arrow {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.34);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--white);
+      font-size: 25px;
+      cursor: pointer;
+      transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .cast-arrow:hover,
+    .cast-arrow:focus-visible {
+      border-color: var(--cast-accent);
+      background: var(--cast-accent);
+      outline: none;
+      transform: translateY(-2px);
+    }
+    .cast-art-zone {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #dce8e7;
+      isolation: isolate;
+    }
+    .cast-backdrop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 54% 50%;
+    }
+    .cast-art-zone::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(11,38,49,.18), transparent 26%);
+    }
+    .cast-accent-block {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+      width: 28%;
+      height: 100%;
+      background: var(--cast-accent);
+      opacity: .84;
+      transition: background-color .4s ease;
+    }
+    .cast-number {
+      position: absolute;
+      z-index: 1;
+      right: 4%;
+      top: 7%;
+      color: rgba(255,255,255,.48);
+      font: 700 clamp(110px, 16vw, 240px)/.8 "WW Display", sans-serif;
+      pointer-events: none;
+    }
+    .cast-ground {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 22px;
+      width: min(420px, 58%);
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(7,28,37,.34);
+      filter: blur(14px);
+      transform: translateX(-50%);
+    }
+    .cast-art {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 16px;
+      width: min(600px, 74%);
+      height: calc(100% - 32px);
+      object-fit: contain;
+      object-position: 50% 100%;
+      filter: drop-shadow(0 18px 16px rgba(7,28,37,.28));
+      transform: translateX(-50%);
+      transform-origin: 50% 100%;
+      transition: opacity .28s ease, transform .36s cubic-bezier(.22,.72,.2,1);
+      animation: cast-idle 3.6s ease-in-out infinite alternate;
+    }
+    .cast-art.is-leaving {
+      opacity: 0;
+      transform: translateX(calc(-50% - 42px)) scale(.985);
+      animation: none;
+    }
+    .cast-art.is-entering {
+      opacity: 0;
+      transform: translateX(calc(-50% + 48px)) scale(.985);
+      animation: none;
+    }
+    .cast-copy-line {
+      transition: opacity .2s ease, transform .28s ease;
+    }
+    .cast-showcase.is-switching .cast-copy-line {
+      opacity: 0;
+      transform: translateY(9px);
+    }
+    .cast-roster {
+      position: relative;
+      z-index: 4;
+      background: #f5f5ef;
+      color: var(--ink);
+    }
+    .cast-roster-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(10, minmax(78px, 1fr));
+      gap: 2px;
+      padding: 16px 20px 20px;
+    }
+    .cast-choice {
+      position: relative;
+      min-width: 0;
+      height: 126px;
+      overflow: hidden;
+      border: 0;
+      border-bottom: 4px solid transparent;
+      border-radius: 6px 6px 0 0;
+      background: #e4e8e4;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .cast-choice img {
+      position: absolute;
+      inset: 8px 0 0;
+      width: 100%;
+      height: 94px;
+      object-fit: contain;
+      object-position: 50% 0;
+      filter: saturate(.62);
+      transition: filter .2s ease, transform .2s ease;
+    }
+    .cast-choice span {
+      position: absolute;
+      z-index: 1;
+      inset: auto 0 0;
+      min-height: 29px;
+      display: grid;
+      place-items: center;
+      background: #f5f5ef;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .cast-choice:hover img { filter: saturate(1); transform: translateY(-3px); }
+    .cast-choice.is-active {
+      border-bottom-color: var(--cast-accent);
+      background: #ffffff;
+    }
+    .cast-choice.is-active img { filter: saturate(1); }
+    .cast-choice:focus-visible { outline: 3px solid var(--cast-accent); outline-offset: -3px; }
     .chapter {
       position: relative;
       min-height: 860px;
@@ -366,28 +602,25 @@
       line-height: 1.28;
       font-weight: 900;
     }
-    .screen-rail {
+    .screen-grid {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: min(320px, 78vw);
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px 18px;
+      width: min(1120px, calc(100% - 40px));
       margin-top: 38px;
-      padding: 0 max(20px, calc((100vw - 1120px) / 2)) 28px;
-      overflow-x: auto;
-      scroll-snap-type: inline mandatory;
-      overscroll-behavior-inline: contain;
-      scrollbar-color: var(--cyan) #e5e9e7;
+      margin-inline: auto;
     }
-    .screen-rail figure { margin: 0; scroll-snap-align: start; }
-    .screen-rail img {
+    .screen-grid figure { min-width: 0; margin: 0; }
+    .screen-grid img {
       display: block;
       width: 100%;
-      aspect-ratio: 1320 / 2868;
-      object-fit: cover;
+      height: auto;
       border: 1px solid var(--line);
       border-radius: 7px;
+      background: #e6eceb;
+      box-shadow: 0 16px 36px rgba(19,34,43,.12);
     }
-    .screen-rail figcaption {
+    .screen-grid figcaption {
       padding-top: 12px;
       color: #5b6870;
       font: 600 14px/1.4 "WW Display", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
@@ -456,6 +689,10 @@
       0%, 100% { transform: scaleX(.35); opacity: .55; }
       50% { transform: scaleX(1); opacity: 1; }
     }
+    @keyframes cast-idle {
+      from { transform: translateX(-50%) translateY(0); }
+      to { transform: translateX(-50%) translateY(-5px); }
+    }
     @media (max-width: 820px) {
       .site-header { width: calc(100% - 28px); }
       .brand span { display: none; }
@@ -491,6 +728,39 @@
       .declaration { padding: 78px 0 82px; }
       .declaration-inner { width: calc(100% - 32px); }
       .declaration h2 { font-size: 39px; }
+      .cast-stage {
+        min-height: auto;
+        grid-template-columns: 1fr;
+      }
+      .cast-art-zone {
+        height: min(118vw, 590px);
+        order: 1;
+      }
+      .cast-backdrop { object-position: 56% 50%; }
+      .cast-art-zone::before { background: linear-gradient(0deg, rgba(11,38,49,.2), transparent 28%); }
+      .cast-accent-block { width: 24%; opacity: .78; }
+      .cast-art {
+        width: min(540px, 88%);
+        height: calc(100% - 18px);
+        bottom: 9px;
+      }
+      .cast-information {
+        order: 2;
+        min-height: 510px;
+        padding: 54px 22px 58px;
+      }
+      .cast-name { font-size: 60px; }
+      .cast-callsign { font-size: 24px; }
+      .cast-description { font-size: 15px; }
+      .cast-roster-inner {
+        grid-template-columns: repeat(10, 92px);
+        overflow-x: auto;
+        scroll-snap-type: inline mandatory;
+        scrollbar-width: none;
+        padding-inline: 16px;
+      }
+      .cast-roster-inner::-webkit-scrollbar { display: none; }
+      .cast-choice { scroll-snap-align: start; }
       .chapter {
         min-height: auto;
         display: flex;
@@ -515,6 +785,18 @@
       .world { min-height: auto; }
       .proof { padding-top: 76px; }
       .proof-head { width: calc(100% - 32px); }
+      .screen-grid {
+        width: 100%;
+        grid-template-columns: repeat(6, min(82vw, 340px));
+        gap: 14px;
+        padding: 0 16px 28px;
+        overflow-x: auto;
+        scroll-snap-type: inline mandatory;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: none;
+      }
+      .screen-grid::-webkit-scrollbar { display: none; }
+      .screen-grid figure { scroll-snap-align: center; }
       .final-cta { min-height: 500px; }
       .final-inner { width: calc(100% - 32px); }
       .final-cta::after { bottom: -20px; font-size: 100px; }
@@ -545,6 +827,11 @@
         pointer-events: auto;
         transform: none;
       }
+      body.cast-in-view .mobile-download {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(18px);
+      }
       footer { padding-bottom: calc(98px + env(safe-area-inset-bottom)); }
     }
     @media (max-width: 390px) {
@@ -557,6 +844,7 @@
       html { scroll-behavior: auto; }
       .hero-image, .next-scene::after { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
+      .cast-art, .cast-copy-line { animation: none; transition: none; }
     }
   </style>
   <script type="application/ld+json">
@@ -612,6 +900,43 @@
       </div>
     </section>
 
+    <section class="cast-showcase" id="cast" aria-labelledby="cast-title">
+      <div class="cast-stage">
+        <div class="cast-information">
+          <p class="cast-index cast-copy-line"><strong id="cast-current">01</strong><span>/ 10 CAST</span></p>
+          <h2 class="cast-name cast-copy-line" id="cast-title">レン</h2>
+          <p class="cast-callsign cast-copy-line" id="cast-callsign">LEAD RUNNER</p>
+          <p class="cast-description cast-copy-line" id="cast-description">熱量で仲間を引っ張り、正解を次の一撃へ変えるワードランナー。</p>
+          <p class="cast-unlock cast-copy-line" id="cast-unlock">STARTER CAST</p>
+          <div class="cast-controls" aria-label="キャラクター切り替え">
+            <button class="cast-arrow" id="cast-prev" type="button" aria-label="前のキャラクター">←</button>
+            <button class="cast-arrow" id="cast-next" type="button" aria-label="次のキャラクター">→</button>
+          </div>
+        </div>
+        <div class="cast-art-zone">
+          <img class="cast-backdrop" src="assets/cast/campus-hall.jpg" width="1672" height="941" alt="放課後の学園廊下" loading="lazy" decoding="async">
+          <div class="cast-accent-block" aria-hidden="true"></div>
+          <span class="cast-number" id="cast-number" aria-hidden="true">01</span>
+          <span class="cast-ground" aria-hidden="true"></span>
+          <img class="cast-art" id="cast-art" src="assets/cast/ren.png" width="719" height="1440" alt="レンの全身立ち絵" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <nav class="cast-roster" aria-label="10人のキャスト">
+        <div class="cast-roster-inner">
+          <button class="cast-choice is-active" type="button" data-cast="0" aria-pressed="true"><img src="assets/cast/ren-thumb.png" alt="" loading="lazy"><span>レン</span></button>
+          <button class="cast-choice" type="button" data-cast="1" aria-pressed="false"><img src="assets/cast/shion-thumb.png" alt="" loading="lazy"><span>シオン</span></button>
+          <button class="cast-choice" type="button" data-cast="2" aria-pressed="false"><img src="assets/cast/gau-thumb.png" alt="" loading="lazy"><span>ガウ</span></button>
+          <button class="cast-choice" type="button" data-cast="3" aria-pressed="false"><img src="assets/cast/ao-thumb.png" alt="" loading="lazy"><span>アオ</span></button>
+          <button class="cast-choice" type="button" data-cast="4" aria-pressed="false"><img src="assets/cast/glen-thumb.png" alt="" loading="lazy"><span>グレン</span></button>
+          <button class="cast-choice" type="button" data-cast="5" aria-pressed="false"><img src="assets/cast/milo-thumb.png" alt="" loading="lazy"><span>ミロ</span></button>
+          <button class="cast-choice" type="button" data-cast="6" aria-pressed="false"><img src="assets/cast/nadiya-thumb.png" alt="" loading="lazy"><span>ナディア</span></button>
+          <button class="cast-choice" type="button" data-cast="7" aria-pressed="false"><img src="assets/cast/luca-thumb.png" alt="" loading="lazy"><span>ルカ</span></button>
+          <button class="cast-choice" type="button" data-cast="8" aria-pressed="false"><img src="assets/cast/eon-thumb.png" alt="" loading="lazy"><span>イオン</span></button>
+          <button class="cast-choice" type="button" data-cast="9" aria-pressed="false"><img src="assets/cast/iori-thumb.png" alt="" loading="lazy"><span>イオリ</span></button>
+        </div>
+      </nav>
+    </section>
+
     <section class="chapter battle">
       <div class="chapter-copy reveal">
         <p class="chapter-index">01 / WORD BATTLE</p>
@@ -653,7 +978,7 @@
         <p class="proof-label">ACTUAL GAME SCREENS</p>
         <h2>遊ぶ。育てる。次のゲートを開ける。</h2>
       </div>
-      <div class="screen-rail" aria-label="コトバトの実際のゲーム画面">
+      <div class="screen-grid" aria-label="コトバトの実際のゲーム画面">
         <figure><img src="assets/01-home.jpg" width="1242" height="2688" alt="ホーム画面" loading="lazy" decoding="async"><figcaption>HOME / TODAY'S GATE</figcaption></figure>
         <figure><img src="assets/02-battle.jpg" width="1242" height="2688" alt="クイズバトル画面" loading="lazy" decoding="async"><figcaption>BATTLE / WORD BREAK</figcaption></figure>
         <figure><img src="assets/03-character.jpg" width="1242" height="2688" alt="キャラクター育成画面" loading="lazy" decoding="async"><figcaption>CAST / LEVEL &amp; BOND</figcaption></figure>
@@ -683,6 +1008,127 @@
 
   <a class="mobile-download" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">App Storeから無料で始める&nbsp; →</a>
   <script>
+    const castData = [
+      { name: "レン", callSign: "LEAD RUNNER", description: "熱量で仲間を引っ張り、正解を次の一撃へ変えるワードランナー。", unlock: "STARTER CAST", image: "ren", accent: "#ef5d4d" },
+      { name: "シオン", callSign: "SHARP READER", description: "問題の意図を鋭く読み、迷いを最短の答えへ研ぎ澄ます戦略派。", unlock: "STARTER CAST", image: "shion", accent: "#8a62c7" },
+      { name: "ガウ", callSign: "GATE BREAKER", description: "音の違いを本能的に捉え、重い一撃でゲートを破る獣人ファイター。", unlock: "STARTER CAST", image: "gau", accent: "#d49a2d" },
+      { name: "アオ", callSign: "SOUND SCOUT", description: "会話の小さな違いを耳で拾い、仲間を正しいルートへ導く穏やかなリスナー。", unlock: "UNLOCK / 450 PT", image: "ao", accent: "#32a9d2" },
+      { name: "グレン", callSign: "WORD ANCHOR", description: "語源から記憶を支え、難しい単語ほど落ち着いて定着させる頼れるまとめ役。", unlock: "UNLOCK / 700 PT", image: "glen", accent: "#4f8f66" },
+      { name: "ミロ", callSign: "ECHO SWITCH", description: "発音とリズムを自在に切り替え、意外な角度から正解を引き寄せる。", unlock: "UNLOCK / 1100 PT", image: "milo", accent: "#e66a9a" },
+      { name: "ナディア", callSign: "ROUTE SPARK", description: "旅先でも会話の糸口をつくり、知らない街を次のステージへ変えるナビゲーター。", unlock: "UNLOCK / 1350 PT", image: "nadiya", accent: "#ee7657" },
+      { name: "ルカ", callSign: "SOCIAL READ", description: "相手の意図を一歩先に読み、日常表現とスラングを使い分ける会話戦略家。", unlock: "UNLOCK / 1650 PT", image: "luca", accent: "#b76a3d" },
+      { name: "イオン", callSign: "PHONEME CORE", description: "声の波形から言葉を解析し、曖昧な発音を精密なデータへ変換する非人間型ユニット。", unlock: "PREMIUM CAST", image: "eon", accent: "#13a9c5" },
+      { name: "イオリ", callSign: "EXAM FOCUS", description: "難問ほど静かに燃え、受験語彙を一問ずつ確実に仕留める集中型チャレンジャー。", unlock: "PREMIUM CAST", image: "iori", accent: "#39a566" }
+    ];
+
+    const castShowcase = document.querySelector(".cast-showcase");
+    const castArt = document.getElementById("cast-art");
+    const castName = document.getElementById("cast-title");
+    const castCallsign = document.getElementById("cast-callsign");
+    const castDescription = document.getElementById("cast-description");
+    const castUnlock = document.getElementById("cast-unlock");
+    const castCurrent = document.getElementById("cast-current");
+    const castNumber = document.getElementById("cast-number");
+    const castChoices = [...document.querySelectorAll(".cast-choice")];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let activeCast = 0;
+    let castTimer = null;
+    let castInView = false;
+    let castPaused = false;
+    let switchToken = 0;
+
+    const preloadCast = (index) => {
+      const image = new Image();
+      image.src = `assets/cast/${castData[index].image}.png`;
+      return image.decode ? image.decode().catch(() => {}) : Promise.resolve();
+    };
+
+    const setCast = async (index, userInitiated = false) => {
+      const nextIndex = (index + castData.length) % castData.length;
+      if (nextIndex === activeCast) return;
+      const token = ++switchToken;
+      const next = castData[nextIndex];
+      castShowcase.classList.add("is-switching");
+      castArt.classList.add("is-leaving");
+      await Promise.all([preloadCast(nextIndex), new Promise((resolve) => setTimeout(resolve, reducedMotion.matches ? 0 : 220))]);
+      if (token !== switchToken) return;
+
+      activeCast = nextIndex;
+      castShowcase.style.setProperty("--cast-accent", next.accent);
+      castArt.src = `assets/cast/${next.image}.png`;
+      castArt.alt = `${next.name}の全身立ち絵`;
+      castName.textContent = next.name;
+      castCallsign.textContent = next.callSign;
+      castDescription.textContent = next.description;
+      castUnlock.textContent = next.unlock;
+      castCurrent.textContent = String(nextIndex + 1).padStart(2, "0");
+      castNumber.textContent = String(nextIndex + 1).padStart(2, "0");
+      castChoices.forEach((choice, choiceIndex) => {
+        const selected = choiceIndex === nextIndex;
+        choice.classList.toggle("is-active", selected);
+        choice.setAttribute("aria-pressed", String(selected));
+      });
+      castArt.classList.remove("is-leaving");
+      castArt.classList.add("is-entering");
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        castShowcase.classList.remove("is-switching");
+        castArt.classList.remove("is-entering");
+      }));
+      if (userInitiated) {
+        castChoices[nextIndex].scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "center" });
+      }
+      preloadCast((nextIndex + 1) % castData.length);
+    };
+
+    const stopCastTimer = () => {
+      window.clearInterval(castTimer);
+      castTimer = null;
+    };
+    const startCastTimer = () => {
+      stopCastTimer();
+      if (!castInView || castPaused || reducedMotion.matches || document.hidden) return;
+      castTimer = window.setInterval(() => setCast(activeCast + 1), 5200);
+    };
+
+    document.getElementById("cast-prev").addEventListener("click", () => {
+      setCast(activeCast - 1, true);
+      startCastTimer();
+    });
+    document.getElementById("cast-next").addEventListener("click", () => {
+      setCast(activeCast + 1, true);
+      startCastTimer();
+    });
+    castChoices.forEach((choice) => choice.addEventListener("click", () => {
+      setCast(Number(choice.dataset.cast), true);
+      startCastTimer();
+    }));
+    castShowcase.addEventListener("mouseenter", () => { castPaused = true; stopCastTimer(); });
+    castShowcase.addEventListener("mouseleave", () => { castPaused = false; startCastTimer(); });
+    castShowcase.addEventListener("focusin", () => { castPaused = true; stopCastTimer(); });
+    castShowcase.addEventListener("focusout", () => {
+      window.setTimeout(() => {
+        castPaused = castShowcase.contains(document.activeElement);
+        startCastTimer();
+      }, 0);
+    });
+    document.addEventListener("visibilitychange", startCastTimer);
+    reducedMotion.addEventListener?.("change", startCastTimer);
+    new IntersectionObserver((entries) => {
+      castInView = entries[0].isIntersecting;
+      document.body.classList.toggle("cast-in-view", castInView);
+      startCastTimer();
+    }, { threshold: .28 }).observe(castShowcase);
+
+    let swipeStartX = null;
+    const castArtZone = document.querySelector(".cast-art-zone");
+    castArtZone.addEventListener("pointerdown", (event) => { swipeStartX = event.clientX; });
+    castArtZone.addEventListener("pointerup", (event) => {
+      if (swipeStartX === null) return;
+      const distance = event.clientX - swipeStartX;
+      swipeStartX = null;
+      if (Math.abs(distance) > 52) setCast(activeCast + (distance < 0 ? 1 : -1), true);
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
