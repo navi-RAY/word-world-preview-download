@@ -3,25 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Word-World: 英単語クイズRPG | 放課後、ことばが武器になる。</title>
-  <meta name="description" content="英単語の正解が攻撃になり、経験値になり、キャラクターとの次の物語になる。受験英語からスラングまで遊べる育成クイズRPG。">
+  <title>コトバト - 英単語クイズRPG | 放課後、ことばが武器になる。</title>
+  <meta name="description" content="大学受験、英会話、海外旅行、ビジネス英語、スラングを5問バトルで学ぶ育成クイズRPG。通学・通勤のスキマ時間や勉強の息抜きにも遊べます。">
   <meta name="theme-color" content="#112f3a">
   <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="apple-mobile-web-app-title" content="コトバト">
   <meta name="apple-itunes-app" content="app-id=6798476120, app-argument=https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">
   <link rel="canonical" href="https://navi-ray.github.io/word-world-preview-download/">
+  <link rel="preload" as="image" href="assets/01-home.jpg" fetchpriority="high">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:title" content="Word-World: 英単語クイズRPG | 放課後、ことばが武器になる。">
+  <meta property="og:site_name" content="コトバト">
+  <meta property="og:title" content="コトバト - 英単語クイズRPG | 放課後、ことばが武器になる。">
   <meta property="og:description" content="答えた5問が、攻撃になり、経験値になり、あいつとの次の会話になる。">
   <meta property="og:url" content="https://navi-ray.github.io/word-world-preview-download/">
-  <meta property="og:image" content="https://navi-ray.github.io/word-world-preview-download/assets/og-word-world.jpg?v=3">
-  <meta property="og:image:alt" content="英単語クイズRPG Word-World">
+  <meta property="og:image" content="https://navi-ray.github.io/word-world-preview-download/assets/og-word-world.jpg?v=4">
+  <meta property="og:image:alt" content="英単語クイズRPG コトバト">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Word-World: 英単語クイズRPG | 放課後、ことばが武器になる。">
+  <meta name="twitter:title" content="コトバト - 英単語クイズRPG | 放課後、ことばが武器になる。">
   <meta name="twitter:description" content="英単語で戦い、キャラクターと物語を進める育成クイズRPG。">
-  <meta name="twitter:image" content="https://navi-ray.github.io/word-world-preview-download/assets/og-word-world.jpg?v=3">
+  <meta name="twitter:image" content="https://navi-ray.github.io/word-world-preview-download/assets/og-word-world.jpg?v=4">
   <style>
     @font-face {
       font-family: "WW Display";
@@ -33,18 +36,6 @@
       font-family: "WW Display";
       src: url("assets/fonts/Rajdhani-SemiBold.ttf") format("truetype");
       font-weight: 600;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "WW Japanese";
-      src: url("assets/fonts/ZenKakuGothicNew-Black.ttf") format("truetype");
-      font-weight: 900;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "WW Japanese";
-      src: url("assets/fonts/ZenKakuGothicNew-Medium.ttf") format("truetype");
-      font-weight: 500;
       font-display: swap;
     }
     :root {
@@ -68,7 +59,7 @@
       overflow-x: hidden;
       background: var(--paper);
       color: var(--ink);
-      font-family: "WW Japanese", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
       letter-spacing: 0;
     }
     a { color: inherit; }
@@ -155,7 +146,14 @@
     }
     h1 {
       margin: 9px 0 0;
-      font: 700 clamp(68px, 8vw, 118px)/.82 "WW Display", sans-serif;
+      font-size: clamp(68px, 8vw, 116px);
+      line-height: .92;
+      font-weight: 900;
+    }
+    .brand-reading {
+      margin: 12px 0 0;
+      color: rgba(255,255,255,.72);
+      font: 700 18px/1 "WW Display", sans-serif;
     }
     .hero-line {
       margin: 26px 0 0;
@@ -171,6 +169,33 @@
       font-size: 17px;
       line-height: 1.9;
       font-weight: 500;
+    }
+    .hero-proof {
+      display: flex;
+      align-items: stretch;
+      max-width: 640px;
+      margin-top: 24px;
+      border-block: 1px solid rgba(255,255,255,.26);
+    }
+    .hero-proof-item {
+      flex: 1;
+      min-width: 0;
+      padding: 13px 16px 14px;
+    }
+    .hero-proof-item:first-child { padding-left: 0; }
+    .hero-proof-item + .hero-proof-item { border-left: 1px solid rgba(255,255,255,.26); }
+    .hero-proof strong {
+      display: block;
+      color: var(--amber);
+      font: 700 24px/1 "WW Display", sans-serif;
+    }
+    .hero-proof span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255,255,255,.76);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
     }
     .actions {
       display: flex;
@@ -190,7 +215,18 @@
       font-size: 15px;
       font-weight: 900;
     }
-    .store-button { background: var(--white); color: var(--ink); }
+    .store-button {
+      flex-direction: column;
+      gap: 2px;
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 10px 26px rgba(0,0,0,.18);
+    }
+    .store-button small {
+      color: #5b6870;
+      font-size: 10px;
+      font-weight: 500;
+    }
     .story-link { border: 1px solid rgba(255,255,255,.5); background: rgba(7,28,37,.5); }
     .next-scene {
       position: absolute;
@@ -353,7 +389,7 @@
     .screen-rail figcaption {
       padding-top: 12px;
       color: #5b6870;
-      font: 600 14px/1.4 "WW Display", "WW Japanese", sans-serif;
+      font: 600 14px/1.4 "WW Display", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
     }
     .final-cta {
       position: relative;
@@ -436,11 +472,17 @@
       }
       .hero-content {
         width: calc(100% - 32px);
-        padding: 360px 0 46px;
+        padding: 300px 0 46px;
       }
-      h1 { font-size: 66px; }
-      .hero-line { max-width: 350px; margin-top: 17px; font-size: 32px; }
+      h1 { font-size: 62px; }
+      .brand-reading { margin-top: 8px; font-size: 15px; }
+      .hero-line { max-width: 350px; margin-top: 18px; font-size: 31px; }
       .hero-copy { max-width: 340px; margin-top: 14px; font-size: 14px; line-height: 1.75; }
+      .hero-proof { margin-top: 18px; }
+      .hero-proof-item { padding: 11px 9px 12px; }
+      .hero-proof-item:first-child { padding-left: 0; }
+      .hero-proof strong { font-size: 20px; }
+      .hero-proof span { font-size: 11px; }
       .actions { display: grid; grid-template-columns: 1fr; margin-top: 20px; }
       .store-button, .story-link { width: 100%; }
       .story-link { display: none; }
@@ -492,13 +534,22 @@
         text-decoration: none;
         font-size: 14px;
         font-weight: 900;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(18px);
+        transition: opacity .24s ease, transform .24s ease;
+      }
+      .mobile-download.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
       }
       footer { padding-bottom: calc(98px + env(safe-area-inset-bottom)); }
     }
     @media (max-width: 390px) {
-      .hero-content { padding-top: 320px; }
-      h1 { font-size: 58px; }
-      .hero-line { font-size: 29px; }
+      .hero-content { padding-top: 250px; }
+      h1 { font-size: 54px; }
+      .hero-line { font-size: 28px; }
       .declaration h2, .chapter h2 { font-size: 35px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -511,10 +562,10 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Word-World: 英単語クイズRPG",
+    "name": "コトバト - 英単語クイズRPG",
     "operatingSystem": "iOS 16.0 or later",
     "applicationCategory": "GameApplication",
-    "description": "英単語の正解が攻撃と育成につながるクイズRPG。",
+    "description": "大学受験、英会話、海外旅行、ビジネス英語、スラングを5問バトルで学ぶ育成クイズRPG。",
     "image": "https://navi-ray.github.io/word-world-preview-download/assets/AppIcon-1024.png",
     "url": "https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&ct=launch_lp&mt=8",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
@@ -523,24 +574,30 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Word-World 英単語クイズRPG トップへ">
-      <img src="assets/AppIcon-1024.png" alt="">
-      <span>WORD-WORLD</span>
+    <a class="brand" href="#top" aria-label="コトバト 英単語クイズRPG トップへ">
+      <img src="assets/AppIcon-96.png" width="96" height="96" alt="">
+      <span>KOTOBATO</span>
     </a>
-    <a class="header-link" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=header_lp&amp;mt=8">App Storeへ</a>
+    <a class="header-link" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">App Storeへ</a>
   </header>
 
   <main id="top">
     <section class="hero">
-      <img class="hero-image" src="assets/01-home.png" alt="英単語クイズRPG Word-Worldの放課後ホーム画面">
+      <img class="hero-image" src="assets/01-home.jpg" width="1242" height="2688" alt="英単語クイズRPG コトバトの放課後ホーム画面" fetchpriority="high">
       <div class="hero-shade"></div>
       <div class="hero-content">
         <p class="eyebrow">ENGLISH QUIZ RPG</p>
-        <h1>WORD-WORLD</h1>
+        <h1>コトバト</h1>
+        <p class="brand-reading">KOTOBATO</p>
         <p class="hero-line">放課後、<br>ことばが武器になる。</p>
         <p class="hero-copy">答えた5問が、攻撃になり、経験値になり、<br>あいつとの次の会話になる。</p>
+        <div class="hero-proof" aria-label="ゲームの特徴">
+          <div class="hero-proof-item"><strong>5 Q</strong><span>1バトル5問</span></div>
+          <div class="hero-proof-item"><strong>5 GATES</strong><span>受験〜スラング</span></div>
+          <div class="hero-proof-item"><strong>10 CAST</strong><span>育成・親密度</span></div>
+        </div>
         <div class="actions">
-          <a class="store-button" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=hero_lp&amp;mt=8">App Storeで無料ダウンロード&nbsp; →</a>
+          <a class="store-button" id="hero-store-cta" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8"><span>App Storeから無料で始める</span><small>iPhone / iPad対応</small></a>
           <a class="story-link" href="#story">ゲームの世界へ&nbsp; ↓</a>
         </div>
       </div>
@@ -561,7 +618,7 @@
         <p>出題される英単語を見極め、4つの意味からターゲットを選ぶ。連続正解はチェインへ、覚えた一語は次の一撃へ変わる。</p>
       </div>
       <figure class="chapter-visual">
-        <img src="assets/02-battle.png" alt="正解した英単語が攻撃に変わるクイズバトル画面" loading="lazy">
+        <img src="assets/02-battle.jpg" width="1242" height="2688" alt="正解した英単語が攻撃に変わるクイズバトル画面" loading="lazy" decoding="async">
       </figure>
     </section>
 
@@ -572,7 +629,7 @@
         <p>経験値でレベルを上げ、贈り物で親密度を深める。表情が変わり、会話が増え、そのキャラクターだけの放課後が解放されていく。</p>
       </div>
       <figure class="chapter-visual">
-        <img src="assets/03-character.png" alt="レベルと親密度を育てて会話を解放するキャラクター画面" loading="lazy">
+        <img src="assets/03-character.jpg" width="1242" height="2688" alt="レベルと親密度を育てて会話を解放するキャラクター画面" loading="lazy" decoding="async">
       </figure>
     </section>
 
@@ -586,7 +643,7 @@
         </div>
       </div>
       <figure class="chapter-visual">
-        <img src="assets/04-world.png" alt="5つの英語カテゴリから挑戦先を選ぶワールド画面" loading="lazy">
+        <img src="assets/04-world.jpg" width="1242" height="2688" alt="5つの英語カテゴリから挑戦先を選ぶワールド画面" loading="lazy" decoding="async">
       </figure>
     </section>
 
@@ -595,13 +652,13 @@
         <p class="proof-label">ACTUAL GAME SCREENS</p>
         <h2>遊ぶ。育てる。次のゲートを開ける。</h2>
       </div>
-      <div class="screen-rail" aria-label="Word-Worldの実際のゲーム画面">
-        <figure><img src="assets/01-home.png" alt="ホーム画面" loading="lazy"><figcaption>HOME / TODAY'S GATE</figcaption></figure>
-        <figure><img src="assets/02-battle.png" alt="クイズバトル画面" loading="lazy"><figcaption>BATTLE / WORD BREAK</figcaption></figure>
-        <figure><img src="assets/03-character.png" alt="キャラクター育成画面" loading="lazy"><figcaption>CAST / LEVEL &amp; BOND</figcaption></figure>
-        <figure><img src="assets/04-world.png" alt="ワールド選択画面" loading="lazy"><figcaption>WORLD / FIVE GATES</figcaption></figure>
-        <figure><img src="assets/05-result.png" alt="バトル結果画面" loading="lazy"><figcaption>RESULT / XP &amp; REWARD</figcaption></figure>
-        <figure><img src="assets/06-premium.png" alt="買い切りパス画面" loading="lazy"><figcaption>PASS / PLAY YOUR WAY</figcaption></figure>
+      <div class="screen-rail" aria-label="コトバトの実際のゲーム画面">
+        <figure><img src="assets/01-home.jpg" width="1242" height="2688" alt="ホーム画面" loading="lazy" decoding="async"><figcaption>HOME / TODAY'S GATE</figcaption></figure>
+        <figure><img src="assets/02-battle.jpg" width="1242" height="2688" alt="クイズバトル画面" loading="lazy" decoding="async"><figcaption>BATTLE / WORD BREAK</figcaption></figure>
+        <figure><img src="assets/03-character.jpg" width="1242" height="2688" alt="キャラクター育成画面" loading="lazy" decoding="async"><figcaption>CAST / LEVEL &amp; BOND</figcaption></figure>
+        <figure><img src="assets/04-world.jpg" width="1242" height="2688" alt="ワールド選択画面" loading="lazy" decoding="async"><figcaption>WORLD / FIVE GATES</figcaption></figure>
+        <figure><img src="assets/05-result.jpg" width="1242" height="2688" alt="バトル結果画面" loading="lazy" decoding="async"><figcaption>RESULT / XP &amp; REWARD</figcaption></figure>
+        <figure><img src="assets/06-premium.jpg" width="1242" height="2688" alt="買い切りパス画面" loading="lazy" decoding="async"><figcaption>PASS / PLAY YOUR WAY</figcaption></figure>
       </div>
     </section>
 
@@ -609,7 +666,7 @@
       <div class="final-inner reveal">
         <h2>その一語で、<br>次の景色を開け。</h2>
         <p>iPhone / iPad対応・基本プレイ無料</p>
-        <a class="store-button" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=footer_lp&amp;mt=8">App Storeで無料ダウンロード&nbsp; →</a>
+        <a class="store-button" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8"><span>App Storeから無料で始める</span><small>iPhone / iPad対応</small></a>
       </div>
     </section>
   </main>
@@ -620,10 +677,10 @@
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="terms.html">利用規約</a>
     </nav>
-    <div>© 2026 CIEL CO., LTD. Word-World</div>
+    <div>© 2026 CIEL CO., LTD. コトバト</div>
   </footer>
 
-  <a class="mobile-download" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=sticky_lp&amp;mt=8">App Storeで無料ダウンロード&nbsp; →</a>
+  <a class="mobile-download" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">App Storeから無料で始める&nbsp; →</a>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -634,6 +691,23 @@
       });
     }, { threshold: 0.18 });
     document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+    const mobileDownload = document.querySelector(".mobile-download");
+    const storeCTAs = [...document.querySelectorAll(".store-button")];
+    if (storeCTAs.length && mobileDownload) {
+      const visibleStoreCTAs = new Set();
+      const downloadObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleStoreCTAs.add(entry.target);
+          } else {
+            visibleStoreCTAs.delete(entry.target);
+          }
+        });
+        mobileDownload.classList.toggle("is-visible", visibleStoreCTAs.size === 0);
+      }, { threshold: 0.25 });
+      storeCTAs.forEach((cta) => downloadObserver.observe(cta));
+    }
   </script>
 </body>
 </html>

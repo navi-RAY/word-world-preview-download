@@ -1,0 +1,11 @@
+# The public site is static. Never publish local secrets or signing material.
+.env
+.env.*
+!.env.example
+*.p8
+*.p12
+*.pem
+*.key
+*.mobileprovision
+GoogleService-Info.plist
+google-services.json
