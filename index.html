@@ -1,17 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>コトバト - 英単語クイズRPG | 放課後、ことばが武器になる。</title>
-  <meta name="description" content="大学受験、英会話、海外旅行、ビジネス英語、スラングを5問バトルで学ぶ育成クイズRPG。通学・通勤のスキマ時間や勉強の息抜きにも遊べます。">
+  <meta name="description" content="英単語で、強くなれ。コトバトは1バトル5問の英単語クイズRPG。750語、10人の仲間、育成と親密度ストーリー。解いた問題は回答履歴で復習できます。iPhone・iPadで基本プレイ無料。">
   <meta name="theme-color" content="#112f3a">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="apple-mobile-web-app-title" content="コトバト">
   <meta name="apple-itunes-app" content="app-id=6798476120, app-argument=https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">
   <link rel="canonical" href="https://navi-ray.github.io/word-world-preview-download/">
   <link rel="icon" href="assets/AppIcon-96.png" type="image/png" sizes="96x96">
-  <link rel="preload" as="image" href="assets/01-home.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/campaign-20260918/01-1024.webp" imagesrcset="assets/campaign-20260918/01-512.webp 512w, assets/campaign-20260918/01-1024.webp 1024w" imagesizes="(max-width: 760px) 82vw, 370px" type="image/webp" fetchpriority="high">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="コトバト">
@@ -29,13 +29,13 @@
   <style>
     @font-face {
       font-family: "WW Display";
-      src: url("assets/fonts/Rajdhani-Bold.ttf") format("truetype");
+      src: url("assets/fonts/Rajdhani-Bold-Latin.ttf") format("truetype");
       font-weight: 700;
       font-display: swap;
     }
     @font-face {
       font-family: "WW Display";
-      src: url("assets/fonts/Rajdhani-SemiBold.ttf") format("truetype");
+      src: url("assets/fonts/Rajdhani-SemiBold-Latin.ttf") format("truetype");
       font-weight: 600;
       font-display: swap;
     }
@@ -268,6 +268,58 @@
       font-size: clamp(38px, 4.7vw, 60px);
       line-height: 1.28;
       font-weight: 900;
+    }
+    .gameplay-preview {
+      background: #13222b;
+      color: var(--white);
+    }
+    .gameplay-preview-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) minmax(320px, 500px);
+      align-items: center;
+      gap: clamp(48px, 8vw, 112px);
+      padding: 92px 0;
+    }
+    .gameplay-preview-copy {
+      max-width: 560px;
+    }
+    .gameplay-preview-copy h2 {
+      margin: 18px 0 0;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.18;
+      font-weight: 900;
+    }
+    .gameplay-preview-copy > p:not(.chapter-index) {
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.78);
+      font-size: 16px;
+      line-height: 1.9;
+      font-weight: 600;
+    }
+    .gameplay-preview-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 32px;
+      background: rgba(255,255,255,.22);
+      border-block: 1px solid rgba(255,255,255,.22);
+    }
+    .gameplay-preview-facts span {
+      min-width: 0;
+      padding: 13px 8px;
+      background: #13222b;
+      color: rgba(255,255,255,.78);
+      font: 700 13px/1.2 "WW Display", sans-serif;
+      text-align: center;
+    }
+    .gameplay-preview-video {
+      width: 100%;
+      aspect-ratio: 886 / 1920;
+      display: block;
+      background: #071c25;
+      box-shadow: 24px 26px 0 var(--amber);
     }
     .cast-showcase {
       --cast-accent: #ef5d4d;
@@ -728,6 +780,19 @@
       .declaration { padding: 78px 0 82px; }
       .declaration-inner { width: calc(100% - 32px); }
       .declaration h2 { font-size: 39px; }
+      .gameplay-preview-inner {
+        width: calc(100% - 32px);
+        grid-template-columns: 1fr;
+        gap: 46px;
+        padding: 68px 0 82px;
+      }
+      .gameplay-preview-copy h2 { font-size: 40px; }
+      .gameplay-preview-copy > p:not(.chapter-index) { font-size: 15px; }
+      .gameplay-preview-video {
+        width: min(100%, 430px);
+        margin: 0 auto;
+        box-shadow: 12px 14px 0 var(--amber);
+      }
       .cast-stage {
         min-height: auto;
         grid-template-columns: 1fr;
@@ -827,7 +892,8 @@
         pointer-events: auto;
         transform: none;
       }
-      body.cast-in-view .mobile-download {
+      body.cast-in-view .mobile-download,
+      body.preview-in-view .mobile-download {
         opacity: 0;
         pointer-events: none;
         transform: translateY(18px);
@@ -847,6 +913,8 @@
       .cast-art, .cast-copy-line { animation: none; transition: none; }
     }
   </style>
+  <link rel="stylesheet" href="assets/campaign-20260918.css">
+  <script src="assets/campaign-20260918.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -854,50 +922,55 @@
     "name": "コトバト - 英単語クイズRPG",
     "operatingSystem": "iOS 16.0 or later",
     "applicationCategory": "GameApplication",
+    "applicationSubCategory": "Educational game",
+    "softwareVersion": "1.0.5",
+    "inLanguage": "ja",
+    "contentRating": "4+",
+    "isAccessibleForFree": true,
     "description": "大学受験、英会話、海外旅行、ビジネス英語、スラングを5問バトルで学ぶ育成クイズRPG。",
+    "keywords": "英単語, 英語学習, 受験英語, 英会話, 旅行英語, ビジネス英語, スラング, クイズRPG, 育成ゲーム, 暇つぶし, スキマ時間",
     "image": "https://navi-ray.github.io/word-world-preview-download/assets/AppIcon-1024.png",
     "url": "https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&ct=launch_lp&mt=8",
+    "downloadUrl": "https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&ct=launch_lp&mt=8",
+    "publisher": { "@type": "Organization", "name": "CIEL CO., LTD." },
+    "screenshot": [
+      "https://navi-ray.github.io/word-world-preview-download/assets/01-home.jpg",
+      "https://navi-ray.github.io/word-world-preview-download/assets/02-battle.jpg",
+      "https://navi-ray.github.io/word-world-preview-download/assets/03-character.jpg"
+    ],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
   }
   </script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header campaign-header">
     <a class="brand" href="#top" aria-label="コトバト 英単語クイズRPG トップへ">
-      <img src="assets/AppIcon-96.png" width="96" height="96" alt="">
-      <span>KOTOBATO</span>
+      <img src="assets/web/AppIcon-80.webp" width="80" height="80" alt="">
+      <span>コトバト</span>
     </a>
     <a class="header-link" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8">App Storeへ</a>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <img class="hero-image" src="assets/01-home.jpg" width="1242" height="2688" alt="英単語クイズRPG コトバトの放課後ホーム画面" fetchpriority="high">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">ENGLISH QUIZ RPG</p>
-        <h1>コトバト</h1>
-        <p class="brand-reading">KOTOBATO</p>
-        <p class="hero-line">放課後、<br>ことばが武器になる。</p>
-        <p class="hero-copy">答えた5問が、攻撃になり、経験値になり、<br>あいつとの次の会話になる。</p>
-        <div class="hero-proof" aria-label="ゲームの特徴">
-          <div class="hero-proof-item"><strong>5 Q</strong><span>1バトル5問</span></div>
-          <div class="hero-proof-item"><strong>5 GATES</strong><span>受験〜スラング</span></div>
-          <div class="hero-proof-item"><strong>10 CAST</strong><span>育成・親密度</span></div>
-        </div>
-        <div class="actions">
-          <a class="store-button" id="hero-store-cta" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8"><span>App Storeから無料で始める</span><small>iPhone / iPad対応</small></a>
-          <a class="story-link" href="#story">ゲームの世界へ&nbsp; ↓</a>
-        </div>
+    <section class="campaign-hero" aria-labelledby="campaign-title">
+      <div class="campaign-intro">
+        <div><h1 id="campaign-title">コトバト <span>英単語クイズRPG</span></h1><p>1バトル5問。英単語を覚えて、仲間を育てよう。</p></div>
+        <a class="store-button" id="hero-store-cta" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8"><span>App Storeから無料で始める</span><small>iPhone・iPad対応</small></a>
       </div>
-      <div class="next-scene" aria-hidden="true">OPEN THE FIRST GATE</div>
+      <div class="campaign-rail" tabindex="0" role="region" aria-label="コトバトの紹介イラスト6枚">
+        <figure><a href="assets/campaign-20260918/01-1024.webp" aria-label="英単語で、強くなれ。の画像を開く"><img src="assets/campaign-20260918/01-1024.webp" srcset="assets/campaign-20260918/01-512.webp 512w, assets/campaign-20260918/01-1024.webp 1024w" sizes="(max-width: 760px) 82vw, 370px" width="1024" height="1536" alt="英単語で、強くなれ。レン、シオン、ミロ" fetchpriority="high"></a><figcaption>01 / 英単語で、強くなれ。</figcaption></figure>
+        <figure><a href="assets/campaign-20260918/02-1024.webp" aria-label="この5問、勝負しようぜ。の画像を開く"><img src="assets/campaign-20260918/02-1024.webp" srcset="assets/campaign-20260918/02-512.webp 512w, assets/campaign-20260918/02-1024.webp 1024w" sizes="(max-width: 760px) 82vw, 370px" width="1024" height="1536" alt="この5問、勝負しようぜ。レンと対戦相手" decoding="async"></a><figcaption>02 / この5問、勝負しようぜ。</figcaption></figure>
+        <figure><a href="assets/campaign-20260918/03-1024.webp" aria-label="仲間のこと、もっと知りたい。の画像を開く"><img src="assets/campaign-20260918/03-1024.webp" srcset="assets/campaign-20260918/03-512.webp 512w, assets/campaign-20260918/03-1024.webp 1024w" sizes="(max-width: 760px) 82vw, 370px" width="1024" height="1536" alt="仲間のこと、もっと知りたい。ミロとシオン" decoding="async"></a><figcaption>03 / 仲間のこと、もっと知りたい。</figcaption></figure>
+        <figure><a href="assets/campaign-20260918/04-1024.webp" aria-label="旅行で使う英語も、クイズで覚える。の画像を開く"><img src="assets/campaign-20260918/04-1024.webp" srcset="assets/campaign-20260918/04-512.webp 512w, assets/campaign-20260918/04-1024.webp 1024w" sizes="(max-width: 760px) 82vw, 370px" width="1024" height="1536" alt="旅行で使う英語も、クイズで覚える。ナディアとアオ" loading="lazy" decoding="async"></a><figcaption>04 / 旅行で使う英語も、クイズで覚える。</figcaption></figure>
+        <figure><a href="assets/campaign-20260918/05-1024.webp" aria-label="あの単語、なんだっけ。の画像を開く"><img src="assets/campaign-20260918/05-1024.webp" srcset="assets/campaign-20260918/05-512.webp 512w, assets/campaign-20260918/05-1024.webp 1024w" sizes="(max-width: 760px) 82vw, 370px" width="1024" height="1536" alt="あの単語、なんだっけ。シオンとアオ" loading="lazy" decoding="async"></a><figcaption>05 / あの単語、なんだっけ。</figcaption></figure>
+        <figure><a href="assets/campaign-20260918/06-1024.webp" aria-label="次は、誰と行こう。の画像を開く"><img src="assets/campaign-20260918/06-1024.webp" srcset="assets/campaign-20260918/06-512.webp 512w, assets/campaign-20260918/06-1024.webp 1024w" sizes="(max-width: 760px) 82vw, 370px" width="1024" height="1536" alt="次は、誰と行こう。ガウとミロ" loading="lazy" decoding="async"></a><figcaption>06 / 次は、誰と行こう。</figcaption></figure>
+      </div>
+      <div class="campaign-controls"><p>紹介用イラスト。実際のプレイ画面とは異なります。</p><button type="button" data-campaign-prev aria-label="前の紹介画像" title="前の紹介画像">←</button><button type="button" data-campaign-next aria-label="次の紹介画像" title="次の紹介画像">→</button></div>
     </section>
 
-    <section class="declaration" id="story">
-      <div class="declaration-inner reveal">
-        <p>これは、単語帳の続きではない。</p>
-        <h2>知らない単語の向こうに、<br>まだ会っていない物語がある。</h2>
-      </div>
+    <section class="campaign-facts" id="story">
+      <h2>750語と、10人の仲間。</h2>
+      <p>受験・日常・旅行・ビジネス・スラングの5カテゴリ。<br>解いた問題は回答履歴に残り、間違えた単語を見直せます。<br><a href="#cast">仲間を見る</a> ・ <a href="#screens">プレイ画面を見る</a></p>
     </section>
 
     <section class="cast-showcase" id="cast" aria-labelledby="cast-title">
@@ -908,31 +981,31 @@
           <p class="cast-callsign cast-copy-line" id="cast-callsign">LEAD RUNNER</p>
           <p class="cast-description cast-copy-line" id="cast-description">熱量で仲間を引っ張り、正解を次の一撃へ変えるワードランナー。</p>
           <p class="cast-unlock cast-copy-line" id="cast-unlock">STARTER CAST</p>
-          <div class="cast-controls" aria-label="キャラクター切り替え">
+          <div class="cast-controls" role="group" aria-label="キャラクター切り替え">
             <button class="cast-arrow" id="cast-prev" type="button" aria-label="前のキャラクター">←</button>
             <button class="cast-arrow" id="cast-next" type="button" aria-label="次のキャラクター">→</button>
           </div>
         </div>
         <div class="cast-art-zone">
-          <img class="cast-backdrop" src="assets/cast/campus-hall.jpg" width="1672" height="941" alt="放課後の学園廊下" loading="lazy" decoding="async">
+          <img class="cast-backdrop" src="assets/web/cast/campus-hall.webp" width="1200" height="675" alt="放課後の学園廊下" loading="lazy" decoding="async">
           <div class="cast-accent-block" aria-hidden="true"></div>
           <span class="cast-number" id="cast-number" aria-hidden="true">01</span>
           <span class="cast-ground" aria-hidden="true"></span>
-          <img class="cast-art" id="cast-art" src="assets/cast/ren.png" width="719" height="1440" alt="レンの全身立ち絵" loading="lazy" decoding="async">
+          <img class="cast-art" id="cast-art" src="assets/web/cast/ren.webp" width="479" height="960" alt="レンの全身立ち絵" loading="lazy" decoding="async">
         </div>
       </div>
       <nav class="cast-roster" aria-label="10人のキャスト">
         <div class="cast-roster-inner">
-          <button class="cast-choice is-active" type="button" data-cast="0" aria-pressed="true"><img src="assets/cast/ren-thumb.png" alt="" loading="lazy"><span>レン</span></button>
-          <button class="cast-choice" type="button" data-cast="1" aria-pressed="false"><img src="assets/cast/shion-thumb.png" alt="" loading="lazy"><span>シオン</span></button>
-          <button class="cast-choice" type="button" data-cast="2" aria-pressed="false"><img src="assets/cast/gau-thumb.png" alt="" loading="lazy"><span>ガウ</span></button>
-          <button class="cast-choice" type="button" data-cast="3" aria-pressed="false"><img src="assets/cast/ao-thumb.png" alt="" loading="lazy"><span>アオ</span></button>
-          <button class="cast-choice" type="button" data-cast="4" aria-pressed="false"><img src="assets/cast/glen-thumb.png" alt="" loading="lazy"><span>グレン</span></button>
-          <button class="cast-choice" type="button" data-cast="5" aria-pressed="false"><img src="assets/cast/milo-thumb.png" alt="" loading="lazy"><span>ミロ</span></button>
-          <button class="cast-choice" type="button" data-cast="6" aria-pressed="false"><img src="assets/cast/nadiya-thumb.png" alt="" loading="lazy"><span>ナディア</span></button>
-          <button class="cast-choice" type="button" data-cast="7" aria-pressed="false"><img src="assets/cast/luca-thumb.png" alt="" loading="lazy"><span>ルカ</span></button>
-          <button class="cast-choice" type="button" data-cast="8" aria-pressed="false"><img src="assets/cast/eon-thumb.png" alt="" loading="lazy"><span>イオン</span></button>
-          <button class="cast-choice" type="button" data-cast="9" aria-pressed="false"><img src="assets/cast/iori-thumb.png" alt="" loading="lazy"><span>イオリ</span></button>
+          <button class="cast-choice is-active" type="button" data-cast="0" aria-pressed="true"><img src="assets/web/cast/ren-thumb.webp" width="99" height="200" alt="" loading="lazy" decoding="async"><span>レン</span></button>
+          <button class="cast-choice" type="button" data-cast="1" aria-pressed="false"><img src="assets/web/cast/shion-thumb.webp" width="98" height="200" alt="" loading="lazy" decoding="async"><span>シオン</span></button>
+          <button class="cast-choice" type="button" data-cast="2" aria-pressed="false"><img src="assets/web/cast/gau-thumb.webp" width="99" height="200" alt="" loading="lazy" decoding="async"><span>ガウ</span></button>
+          <button class="cast-choice" type="button" data-cast="3" aria-pressed="false"><img src="assets/web/cast/ao-thumb.webp" width="103" height="200" alt="" loading="lazy" decoding="async"><span>アオ</span></button>
+          <button class="cast-choice" type="button" data-cast="4" aria-pressed="false"><img src="assets/web/cast/glen-thumb.webp" width="92" height="200" alt="" loading="lazy" decoding="async"><span>グレン</span></button>
+          <button class="cast-choice" type="button" data-cast="5" aria-pressed="false"><img src="assets/web/cast/milo-thumb.webp" width="96" height="200" alt="" loading="lazy" decoding="async"><span>ミロ</span></button>
+          <button class="cast-choice" type="button" data-cast="6" aria-pressed="false"><img src="assets/web/cast/nadiya-thumb.webp" width="95" height="200" alt="" loading="lazy" decoding="async"><span>ナディア</span></button>
+          <button class="cast-choice" type="button" data-cast="7" aria-pressed="false"><img src="assets/web/cast/luca-thumb.webp" width="95" height="200" alt="" loading="lazy" decoding="async"><span>ルカ</span></button>
+          <button class="cast-choice" type="button" data-cast="8" aria-pressed="false"><img src="assets/web/cast/eon-thumb.webp" width="95" height="200" alt="" loading="lazy" decoding="async"><span>イオン</span></button>
+          <button class="cast-choice" type="button" data-cast="9" aria-pressed="false"><img src="assets/web/cast/iori-thumb.webp" width="95" height="200" alt="" loading="lazy" decoding="async"><span>イオリ</span></button>
         </div>
       </nav>
     </section>
@@ -944,7 +1017,7 @@
         <p>出題される英単語を見極め、4つの意味からターゲットを選ぶ。連続正解はチェインへ、覚えた一語は次の一撃へ変わる。</p>
       </div>
       <figure class="chapter-visual">
-        <img src="assets/02-battle.jpg" width="1242" height="2688" alt="正解した英単語が攻撃に変わるクイズバトル画面" loading="lazy" decoding="async">
+        <img src="assets/web/02-battle.webp?v=14" width="720" height="1558" alt="正解した英単語が攻撃に変わるクイズバトル画面" loading="lazy" decoding="async">
       </figure>
     </section>
 
@@ -955,7 +1028,7 @@
         <p>経験値でレベルを上げ、贈り物で親密度を深める。表情が変わり、会話が増え、そのキャラクターだけの放課後が解放されていく。</p>
       </div>
       <figure class="chapter-visual">
-        <img src="assets/03-character.jpg" width="1242" height="2688" alt="レベルと親密度を育てて会話を解放するキャラクター画面" loading="lazy" decoding="async">
+        <img src="assets/web/03-character.webp?v=14" width="720" height="1558" alt="レベルと親密度を育てて会話を解放するキャラクター画面" loading="lazy" decoding="async">
       </figure>
     </section>
 
@@ -963,13 +1036,13 @@
       <div class="chapter-copy reveal">
         <p class="chapter-index">03 / FIVE GATES</p>
         <h2>教室の外まで、<br>英語は続く。</h2>
-        <p>受験のための語彙から、旅先のひと言、仕事で通じる表現、街で飛び交うスラングまで。覚える目的そのものが、次のワールドになる。</p>
-        <div class="world-tags" aria-label="収録カテゴリ">
+        <p>受験・日常・旅行・ビジネス・スラングの5カテゴリに、各150語、計750語を収録。勉強したいテーマを選んで挑戦できます。</p>
+        <div class="world-tags" role="group" aria-label="収録カテゴリ">
           <span>受験</span><span>日常</span><span>旅行</span><span>ビジネス</span><span>スラング</span>
         </div>
       </div>
       <figure class="chapter-visual">
-        <img src="assets/04-world.jpg" width="1242" height="2688" alt="5つの英語カテゴリから挑戦先を選ぶワールド画面" loading="lazy" decoding="async">
+        <img src="assets/web/04-world.webp?v=14" width="720" height="1558" alt="5つの英語カテゴリから挑戦先を選ぶワールド画面" loading="lazy" decoding="async">
       </figure>
     </section>
 
@@ -977,22 +1050,23 @@
       <div class="proof-head reveal">
         <p class="proof-label">ACTUAL GAME SCREENS</p>
         <h2>遊ぶ。育てる。次のゲートを開ける。</h2>
+        <p>ゲーム本編は基本プレイ無料。広告なしパスは希望する人だけが選べる任意加入です。</p>
       </div>
-      <div class="screen-grid" aria-label="コトバトの実際のゲーム画面">
-        <figure><img src="assets/01-home.jpg" width="1242" height="2688" alt="ホーム画面" loading="lazy" decoding="async"><figcaption>HOME / TODAY'S GATE</figcaption></figure>
-        <figure><img src="assets/02-battle.jpg" width="1242" height="2688" alt="クイズバトル画面" loading="lazy" decoding="async"><figcaption>BATTLE / WORD BREAK</figcaption></figure>
-        <figure><img src="assets/03-character.jpg" width="1242" height="2688" alt="キャラクター育成画面" loading="lazy" decoding="async"><figcaption>CAST / LEVEL &amp; BOND</figcaption></figure>
-        <figure><img src="assets/04-world.jpg" width="1242" height="2688" alt="ワールド選択画面" loading="lazy" decoding="async"><figcaption>WORLD / FIVE GATES</figcaption></figure>
-        <figure><img src="assets/05-result.jpg" width="1242" height="2688" alt="バトル結果画面" loading="lazy" decoding="async"><figcaption>RESULT / XP &amp; REWARD</figcaption></figure>
-        <figure><img src="assets/06-premium.jpg" width="1242" height="2688" alt="広告なしパス画面" loading="lazy" decoding="async"><figcaption>PASS / PLAY YOUR WAY</figcaption></figure>
+      <div class="screen-grid" role="group" aria-label="コトバトの実際のゲーム画面">
+        <figure><img src="assets/web/hero-640.webp" width="640" height="1385" alt="ホーム画面" loading="lazy" decoding="async"><figcaption>HOME / TODAY'S GATE</figcaption></figure>
+        <figure><img src="assets/web/02-battle.webp?v=14" width="720" height="1558" alt="クイズバトル画面" loading="lazy" decoding="async"><figcaption>BATTLE / WORD BREAK</figcaption></figure>
+        <figure><img src="assets/web/03-character.webp?v=14" width="720" height="1558" alt="キャラクター育成画面" loading="lazy" decoding="async"><figcaption>CAST / LEVEL &amp; BOND</figcaption></figure>
+        <figure><img src="assets/web/04-world.webp?v=14" width="720" height="1558" alt="ワールド選択画面" loading="lazy" decoding="async"><figcaption>WORLD / FIVE GATES</figcaption></figure>
+        <figure><img src="assets/web/05-result.webp?v=14" width="720" height="1558" alt="バトル結果画面" loading="lazy" decoding="async"><figcaption>RESULT / XP &amp; REWARD</figcaption></figure>
+        <figure><img src="assets/06-learning-record.jpg?v=16" width="720" height="1558" alt="回答履歴と単語図鑑の画面" loading="lazy" decoding="async"><figcaption>回答履歴 / 単語図鑑</figcaption></figure>
       </div>
     </section>
 
     <section class="final-cta">
       <div class="final-inner reveal">
-        <h2>その一語で、<br>次の景色を開け。</h2>
-        <p>iPhone / iPad対応・基本プレイ無料</p>
-        <a class="store-button" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8"><span>App Storeから無料で始める</span><small>iPhone / iPad対応</small></a>
+        <h2>まずは、5問。</h2>
+        <p>iPhone・iPad対応 / 基本プレイ無料</p>
+        <a class="store-button" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=launch_lp&amp;mt=8"><span>App Storeから無料で始める</span><small>750語・5つの英語カテゴリを収録</small></a>
       </div>
     </section>
   </main>
@@ -1002,6 +1076,8 @@
       <a href="support.html">サポート</a>
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="terms.html">利用規約</a>
+      <a href="press.html">掲載用素材</a>
+      <a href="https://cielsaloon.com/">株式会社シエル</a>
     </nav>
     <div>© 2026 CIEL CO., LTD. コトバト</div>
   </footer>
@@ -1039,7 +1115,7 @@
 
     const preloadCast = (index) => {
       const image = new Image();
-      image.src = `assets/cast/${castData[index].image}.png`;
+      image.src = `assets/web/cast/${castData[index].image}.webp`;
       return image.decode ? image.decode().catch(() => {}) : Promise.resolve();
     };
 
@@ -1055,7 +1131,7 @@
 
       activeCast = nextIndex;
       castShowcase.style.setProperty("--cast-accent", next.accent);
-      castArt.src = `assets/cast/${next.image}.png`;
+      castArt.src = `assets/web/cast/${next.image}.webp`;
       castArt.alt = `${next.name}の全身立ち絵`;
       castName.textContent = next.name;
       castCallsign.textContent = next.callSign;

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>コトバト プレスキット | 英単語クイズRPG</title>
+  <meta name="description" content="英単語クイズRPG「コトバト」の概要、紹介イラスト、アプリアイコン、ゲーム画面、掲載用リンクをまとめたメディア向けプレスキットです。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#f5c84c">
+  <link rel="canonical" href="https://navi-ray.github.io/word-world-preview-download/press.html">
+  <link rel="icon" href="assets/AppIcon-96.png" type="image/png" sizes="96x96">
+  <style>
+    @font-face {
+      font-family: "WW Display";
+      src: url("assets/fonts/Rajdhani-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-display: swap;
+    }
+    :root {
+      --ink: #13222b;
+      --muted: #52616a;
+      --paper: #f5f5ef;
+      --white: #ffffff;
+      --yellow: #f5c84c;
+      --coral: #ef5d4d;
+      --teal: #168e96;
+      --line: #c7ced1;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    img, video { display: block; max-width: 100%; }
+    .download img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: contain; margin-bottom: 16px; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 0 max(24px, calc((100vw - 1160px) / 2));
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font: 700 21px/1 "WW Display", sans-serif;
+    }
+    .brand img { width: 42px; height: 42px; border-radius: 7px; }
+    .back-link { font-size: 14px; font-weight: 800; text-decoration: none; }
+    .hero {
+      background: var(--yellow);
+      padding: 72px max(24px, calc((100vw - 1160px) / 2)) 84px;
+    }
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--teal);
+      font: 700 18px/1 "WW Display", sans-serif;
+    }
+    h1 {
+      max-width: 930px;
+      margin: 0;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 1.05;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 26px 0 0;
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 650;
+      line-height: 1.8;
+    }
+    .status {
+      display: inline-flex;
+      margin-top: 30px;
+      padding: 12px 16px;
+      border-left: 8px solid var(--coral);
+      background: var(--white);
+      font-size: 14px;
+      font-weight: 850;
+    }
+    .section {
+      padding: 72px max(24px, calc((100vw - 1160px) / 2));
+      border-bottom: 1px solid var(--line);
+    }
+    .section.dark { background: #102f3b; color: var(--white); }
+    .section.white { background: var(--white); }
+    .section h2 { margin: 0 0 32px; font-size: clamp(30px, 4vw, 48px); }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 0;
+      border-top: 1px solid var(--line);
+    }
+    .facts div {
+      display: grid;
+      grid-template-columns: minmax(120px, .45fr) 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .facts div:nth-child(odd) { padding-right: 28px; }
+    .facts div:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--line); }
+    dt { color: var(--muted); font-weight: 800; }
+    dd { margin: 0; font-weight: 700; }
+    .video-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(280px, 420px);
+      gap: 56px;
+      align-items: center;
+    }
+    .video-copy p { max-width: 620px; color: #d8e3e6; font-size: 17px; line-height: 1.8; }
+    video { width: 100%; max-height: 720px; background: #081b22; }
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+    }
+    .download {
+      min-height: 150px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .download:nth-child(3n) { border-right: 0; }
+    .download strong { display: block; margin-bottom: 12px; font-size: 20px; }
+    .download span { color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 58px;
+      margin-top: 28px;
+      padding: 0 24px;
+      background: var(--coral);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .usage { max-width: 820px; color: var(--muted); line-height: 1.8; }
+    footer {
+      padding: 34px max(24px, calc((100vw - 1160px) / 2));
+      background: #0a2029;
+      color: #d8e3e6;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    footer a { color: var(--white); }
+    @media (max-width: 760px) {
+      .topbar { min-height: 64px; }
+      .hero, .section { padding-top: 52px; padding-bottom: 56px; }
+      .facts, .video-layout, .downloads { grid-template-columns: 1fr; }
+      .facts div, .facts div:nth-child(odd), .facts div:nth-child(even) {
+        grid-template-columns: 110px 1fr;
+        padding: 16px 0;
+        border-left: 0;
+      }
+      .download, .download:nth-child(3n) { border-right: 0; }
+      .video-layout { gap: 32px; }
+      video { max-width: 360px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/AppIcon-96.png" width="96" height="96" alt=""><span>KOTOBATO</span></a>
+    <a class="back-link" href="index.html">公式サイトへ</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="kicker">PRESS KIT / 2026.09</p>
+      <h1>5問の英単語が、<br>攻撃になる。</h1>
+      <p class="lead">「コトバト」は、受験英語から日常会話・旅行・仕事・スラングまで750語を、キャラクター育成とクイズバトルで学ぶ英単語RPGです。回答履歴と単語図鑑から、解いた問題を復習できます。</p>
+      <p class="status">Version 1.0.5 / iPhone・iPad対応 / ゲーム本編は基本プレイ無料</p>
+    </section>
+
+    <section class="section white">
+      <h2>基本情報</h2>
+      <dl class="facts">
+        <div><dt>タイトル</dt><dd>コトバト - 英単語クイズRPG</dd></div>
+        <div><dt>提供</dt><dd>CIEL CO., LTD.</dd></div>
+        <div><dt>ジャンル</dt><dd>教育 / RPG / トリビア</dd></div>
+        <div><dt>価格</dt><dd>基本プレイ無料 / 広告なしパスは任意加入</dd></div>
+        <div><dt>対応</dt><dd>iPhone・iPad / iOS・iPadOS 16以降</dd></div>
+        <div><dt>1プレイ</dt><dd>5問</dd></div>
+        <div><dt>カテゴリ</dt><dd>受験・日常・旅行・ビジネス・スラング / 750語</dd></div>
+        <div><dt>キャスト</dt><dd>10人 / 育成・親密度ストーリー</dd></div>
+      </dl>
+      <a class="cta" href="https://apps.apple.com/app/apple-store/id6798476120?pt=128977846&amp;ct=press_kit&amp;mt=8">App Storeの商品ページ</a>
+    </section>
+
+    <section class="section white">
+      <h2>紹介イラスト6枚</h2>
+      <p class="usage">App Storeで公開中の紹介イラストです。実際のプレイ画面とは異なります。</p>
+      <div class="downloads">
+        <a class="download" href="assets/campaign-20260918/01-1024.webp" download><img src="assets/campaign-20260918/01-512.webp" width="512" height="768" alt="英単語で、強くなれ。" loading="lazy"><strong>01 / 英単語で、強くなれ。</strong></a>
+        <a class="download" href="assets/campaign-20260918/02-1024.webp" download><img src="assets/campaign-20260918/02-512.webp" width="512" height="768" alt="この5問、勝負しようぜ。" loading="lazy"><strong>02 / この5問、勝負しようぜ。</strong></a>
+        <a class="download" href="assets/campaign-20260918/03-1024.webp" download><img src="assets/campaign-20260918/03-512.webp" width="512" height="768" alt="仲間のこと、もっと知りたい。" loading="lazy"><strong>03 / 仲間のこと、もっと知りたい。</strong></a>
+        <a class="download" href="assets/campaign-20260918/04-1024.webp" download><img src="assets/campaign-20260918/04-512.webp" width="512" height="768" alt="旅行で使う英語も、クイズで覚える。" loading="lazy"><strong>04 / 旅行で使う英語も、クイズで覚える。</strong></a>
+        <a class="download" href="assets/campaign-20260918/05-1024.webp" download><img src="assets/campaign-20260918/05-512.webp" width="512" height="768" alt="あの単語、なんだっけ。" loading="lazy"><strong>05 / あの単語、なんだっけ。</strong></a>
+        <a class="download" href="assets/campaign-20260918/06-1024.webp" download><img src="assets/campaign-20260918/06-512.webp" width="512" height="768" alt="次は、誰と行こう。" loading="lazy"><strong>06 / 次は、誰と行こう。</strong></a>
+      </div>
+    </section>
+
+    <section class="section white">
+      <h2>実プレイ画面・その他の素材</h2>
+      <div class="downloads">
+        <a class="download" href="assets/AppIcon-1024.png" download><strong>App Icon</strong><span>1024 x 1024 / PNG</span></a>
+        <a class="download" href="assets/og-word-world.jpg" download><strong>Key Visual</strong><span>1200 x 630 / JPEG</span></a>
+        <a class="download" href="assets/01-home.jpg" download><strong>Home</strong><span>実アプリ画面 / JPEG</span></a>
+        <a class="download" href="assets/02-battle.jpg" download><strong>Battle</strong><span>実アプリ画面 / JPEG</span></a>
+        <a class="download" href="assets/03-character.jpg" download><strong>Character</strong><span>実アプリ画面 / JPEG</span></a>
+        <a class="download" href="assets/04-world.jpg" download><strong>World</strong><span>実アプリ画面 / JPEG</span></a>
+        <a class="download" href="assets/05-result.jpg" download><strong>Result</strong><span>実アプリ画面 / JPEG</span></a>
+        <a class="download" href="assets/06-learning-record.jpg" download><strong>Learning Record</strong><span>回答履歴・単語図鑑 / JPEG</span></a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>素材利用</h2>
+      <p class="usage">本ページの画像は、「コトバト」の紹介記事、レビュー、ニュース、SNS投稿、配信動画で利用できます。アプリ内容を誤認させる加工、第三者の商品としての再配布、CIEL CO., LTD.が掲載内容を推奨しているように見せる利用はできません。</p>
+      <a class="cta" href="support.html">掲載・取材に関する問い合わせ</a>
+    </section>
+  </main>
+
+  <footer>
+    提供: CIEL CO., LTD.<br>
+    <a href="index.html">公式サイト</a> / <a href="support.html">サポート</a> / <a href="privacy.html">プライバシーポリシー</a> / <a href="terms.html">利用規約</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+[
+  {
+    "order": 1,
+    "source": "kotobato-three-cast-v1.png",
+    "sourceSha256": "b5dbd7766ece6f7ef9ac8acd6985179d851d109896514e7c8f5a826b3dec099b",
+    "variants": [
+      {
+        "file": "01-512.webp",
+        "width": 512,
+        "height": 768,
+        "bytes": 158684
+      },
+      {
+        "file": "01-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 448508
+      }
+    ]
+  },
+  {
+    "order": 2,
+    "source": "kotobato-battle-v2.png",
+    "sourceSha256": "184311b5c47bdc1a5311a0434cc450899e0b95eff57e2487263b2258bf1aebde",
+    "variants": [
+      {
+        "file": "02-512.webp",
+        "width": 512,
+        "height": 768,
+        "bytes": 156782
+      },
+      {
+        "file": "02-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 400284
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "source": "kotobato-bond-story-v3.png",
+    "sourceSha256": "1b3c43f01b8e244f92229e729340c1d7b4507a13acb02b4941ebe11255477ecd",
+    "variants": [
+      {
+        "file": "03-512.webp",
+        "width": 512,
+        "height": 768,
+        "bytes": 143634
+      },
+      {
+        "file": "03-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 377794
+      }
+    ]
+  },
+  {
+    "order": 4,
+    "source": "kotobato-travel-v2.png",
+    "sourceSha256": "60670b1ef0579c3f31da4e2d0a69e3540d3c4cb4ee107825b02dba8f98852e10",
+    "variants": [
+      {
+        "file": "04-512.webp",
+        "width": 512,
+        "height": 768,
+        "bytes": 152224
+      },
+      {
+        "file": "04-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 429598
+      }
+    ]
+  },
+  {
+    "order": 5,
+    "source": "kotobato-review-v4.png",
+    "sourceSha256": "561ab586de3d8aa67eb0d73492ca94fe9d67aa722fe6fdf5e5b4f641fa910d5b",
+    "variants": [
+      {
+        "file": "05-512.webp",
+        "width": 512,
+        "height": 768,
+        "bytes": 139818
+      },
+      {
+        "file": "05-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 346742
+      }
+    ]
+  },
+  {
+    "order": 6,
+    "source": "kotobato-companions-v3.png",
+    "sourceSha256": "177098d50ff9884a94e388bff1b6a571900ef652e639063821460ebb3800eec9",
+    "variants": [
+      {
+        "file": "06-512.webp",
+        "width": 512,
+        "height": 768,
+        "bytes": 145566
+      },
+      {
+        "file": "06-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 373230
+      }
+    ]
+  }
+]

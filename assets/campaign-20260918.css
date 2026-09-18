@@ -1,0 +1,89 @@
+/* Shared by the official LP and company product page. */
+.campaign-header {
+  position: static;
+  width: min(1200px, calc(100% - 32px));
+  padding: 14px 0;
+  color: #17232a;
+  gap: 16px;
+}
+.campaign-header .brand { color: #17232a; font-family: inherit; font-size: 22px; }
+.campaign-header .brand span { display: inline; }
+.campaign-header .header-link { background: #17232a; font-size: 14px; border: 0; }
+.campaign-hero { background: #fff; color: #17232a; padding: 8px 0 36px; }
+.campaign-intro {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+.campaign-intro h1 { margin: 0; font-size: 36px; line-height: 1.25; letter-spacing: 0; }
+.campaign-intro h1 span { font-size: 18px; display: inline-block; }
+.campaign-intro p { margin: 8px 0 0; font-size: 16px; line-height: 1.7; }
+.campaign-hero .store-button { display: inline-flex; flex-direction: column; gap: 2px; text-align: center; background: #17232a; color: #fff; font-size: 16px; box-shadow: none; min-height: 52px; }
+.campaign-hero .store-button small { color: #e1e6e8; font-size: 13px; }
+.campaign-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(370px, 82vw);
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(16px, calc((100% - 1200px) / 2));
+  padding: 0 max(16px, calc((100% - 1200px) / 2)) 16px;
+  scrollbar-color: #17838d #e8edef;
+  background: #fff;
+}
+.campaign-rail figure { margin: 0; min-width: 0; scroll-snap-align: start; }
+.campaign-rail a { display: block; }
+.campaign-rail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.campaign-rail figcaption { padding: 10px 0 0; font-size: 14px; line-height: 1.5; color: #35474d; }
+.campaign-controls { width: min(1200px, calc(100% - 32px)); margin: 12px auto 0; display: flex; gap: 12px; align-items: center; }
+.campaign-controls p { margin: 0 auto 0 0; font-size: 14px; line-height: 1.6; color: #536268; }
+.campaign-controls button { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 4px; border: 1px solid #b3c0c5; background: #fff; color: #17232a; font-size: 24px; cursor: pointer; }
+.campaign-controls button:disabled { opacity: .35; cursor: default; }
+.campaign-facts { padding: 40px 16px; background: #edf5f5; text-align: center; }
+.campaign-facts h2 { margin: 0; font-size: 28px; line-height: 1.5; }
+.campaign-facts p { margin: 14px auto 0; max-width: 780px; font-size: 16px; line-height: 1.9; }
+.campaign-facts a { font-weight: 700; color: #096e78; }
+.campaign-hero a:focus-visible, .campaign-controls button:focus-visible { outline: 3px solid #137985; outline-offset: 4px; }
+.chapter .chapter-visual { display: flex; justify-content: center; align-items: center; min-height: 0; padding: 32px; }
+.chapter .chapter-visual img { position: static; width: min(100%, 420px); height: auto; object-fit: contain; }
+.chapter .chapter-visual::after { display: none; }
+.chapter { min-height: 0; }
+.chapter h2 { font-size: 40px; }
+.chapter-copy > p:not(.chapter-index) { font-size: 16px; }
+.screen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.screen-grid img { height: auto; object-fit: contain; }
+.proof-head h2 { font-size: 36px; }
+.final-inner h2 { font-size: 42px; }
+@media (max-width: 760px) {
+  .campaign-header { width: calc(100% - 32px); }
+  .campaign-header .brand { font-size: 20px; }
+  .campaign-intro h1 { font-size: 30px; }
+  .campaign-intro { gap: 14px; margin-bottom: 16px; }
+  .campaign-intro .store-button { width: 100%; }
+  .campaign-rail { grid-auto-columns: min(320px, 82vw); gap: 12px; }
+  .campaign-controls p { font-size: 13px; }
+  .campaign-facts h2 { font-size: 24px; }
+  .chapter .chapter-visual { min-height: 0; padding: 20px; }
+  .chapter h2 { font-size: 32px; }
+  .screen-grid { grid-template-columns: repeat(6, min(82vw, 340px)); }
+  .proof-head h2, .final-inner h2 { font-size: 30px; }
+}
+@media (max-height: 740px) and (min-width: 761px) {
+  .campaign-rail { grid-auto-columns: 285px; }
+}
+@media (prefers-reduced-motion: reduce) { .campaign-rail { scroll-behavior: auto; } }
